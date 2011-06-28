@@ -1,1 +1,1 @@
-rvm --create use 1.9.2@tripaliare
+rvm --create use 1.9.2@rails-template

@@ -1,30 +1,44 @@
-require 'rubygems'
-require 'spork'
-
-Spork.prefork do
-  ENV["RAILS_ENV"] = "test"
-  require File.expand_path('../../config/environment', __FILE__)
-  require 'rails/test_help'
-  require 'minitest/spec'
-  require 'simplecov'
-  SimpleCov.start :rails do
-    %w(Services Cells Uploaders).each do |name|
-      add_group name, "app/#{name.downcase}"
-    end
-    add_filter do |source_file|
-      source_file.filename =~ %r{vendor/plugins}
-    end
+require 'simplecov'
+SimpleCov.start do
+  %w(Models Helpers Services Cells Observers Uploaders).each do |name|
+    add_group name, "app/#{name.downcase}"
   end
+  add_filter '/test/'
+  add_filter '/features/'
+  add_filter '/config/'
+  add_filter '/db/'
+  add_filter '/vendor/'
+  add_filter '/lib/'
 
-  class ActiveSupport::TestCase
-    # Reset the Machinist cache before each test.
-    setup { Machinist.reset_before_test }
-  end
-
-  require 'machinist/active_record'
-  require 'minitest/autorun'
-
-Spork.each_run do
-  Dir[Rails.root.join("test/support/**/*.rb")].each {|f| require f}
-  require File.expand_path(File.dirname(__FILE__) + '/blueprints')
+  # Tested at an integration level
+  add_filter '/app\/controllers/'
+  add_filter '/app\/mailers/'
 end
+
+ENV["RAILS_ENV"] = "test"
+require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
+require 'minitest/spec'
+require 'mocha'
+require 'machinist/active_record'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :transaction
+
+ActiveRecord::Base.observers = []
+
+class MiniTest::Unit::TestCase
+  include Mocha::API
+  def setup
+    Machinist.reset_before_test
+    DatabaseCleaner.start
+    mocha_setup
+  end
+  def teardown
+    DatabaseCleaner.clean
+    mocha_teardown
+  end
+end
+
+require File.expand_path(File.dirname(__FILE__) + '/blueprints')
+Dir[Rails.root.join("test/support/**/*.rb")].each {|f| require f}
+require 'minitest/autorun'
