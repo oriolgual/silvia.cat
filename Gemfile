@@ -44,7 +44,7 @@ group :test do
   gem 'rb-fsevent'
   gem 'guard'
   gem 'guard-cucumber'
-  gem 'guard-minitest', git: 'git://github.com/oriolgual/guard-minitest.git', branch: 'add_support_for_drb'
+  gem 'guard-minitest'
   gem 'guard-annotate'
 end
 

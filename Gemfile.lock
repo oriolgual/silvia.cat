@@ -6,14 +6,6 @@ GIT
       ansi (>= 1.2.2)
 
 GIT
-  remote: git://github.com/oriolgual/guard-minitest.git
-  revision: 462a4d40666fa2b1ed5c31ba6f7597bbacf7be10
-  branch: add_support_for_drb
-  specs:
-    guard-minitest (0.4.0.rc3)
-      guard (>= 0.2.2)
-
-GIT
   remote: git://github.com/oriolgual/rack-test.git
   revision: 05d919e9569a948789694bf15b806a1870e9658a
   specs:
@@ -129,6 +121,8 @@ GEM
     guard-cucumber (0.5.0)
       cucumber (>= 0.10)
       guard (>= 0.4.0)
+    guard-minitest (0.4.0)
+      guard (~> 0.4)
     has_scope (0.5.0)
     high_voltage (0.9.4)
     hike (1.1.0)
@@ -218,7 +212,7 @@ GEM
     sprockets (2.0.0.beta.10)
       hike (~> 1.0)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
+      tilt (!= 1.3.0, ~> 1.1)
     sqlite3 (1.3.3)
     temple (0.3.2)
     term-ansicolor (1.0.5)
@@ -253,7 +247,7 @@ DEPENDENCIES
   guard
   guard-annotate
   guard-cucumber
-  guard-minitest!
+  guard-minitest
   high_voltage
   inherited_resources
   jquery-rails
