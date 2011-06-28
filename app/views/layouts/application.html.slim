@@ -1,17 +1,21 @@
 doctype 5
 html
   head
-    title Aulabora
+    title Rails Template
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
   body
     #container
       header#header
-      aside#sidebar
+        h1 Rails template
       section#content
         -if !(@flash_messages = flash_messages).blank?
           #flash-messages
             = @flash_messages
         = yield
+      aside#sidebar
+        =yield(:sidebar)
       footer#footer
+        p
+          | Footer content

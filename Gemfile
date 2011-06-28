@@ -22,6 +22,7 @@ gem 'button_form'
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'client_side_validations'
+gem 'high_voltage'
 
 gem "capybara", group: [:development, :test]
 gem "cucumber-rails", group: [:development, :test]

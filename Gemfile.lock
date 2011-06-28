@@ -93,6 +93,7 @@ GEM
     gherkin (2.4.1)
       json (>= 1.4.6)
     has_scope (0.5.0)
+    high_voltage (0.9.4)
     hike (1.1.0)
     i18n (0.6.0)
     inherited_resources (1.2.2)
@@ -202,6 +203,7 @@ DEPENDENCIES
   devise
   flash_messages_helper
   forgery
+  high_voltage
   inherited_resources
   jquery-rails
   machinist (>= 2.0.0.beta1)
