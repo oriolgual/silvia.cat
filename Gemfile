@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
-gem 'sqlite3'
 
 gem "devise"
 gem "slim"
@@ -24,12 +23,31 @@ gem 'carrierwave'
 gem 'client_side_validations'
 gem 'high_voltage'
 
-gem "capybara", group: [:development, :test]
-gem "cucumber-rails", group: [:development, :test]
-gem "minitest", group: [:development, :test]
-gem "mocha", group: [:development, :test]
-gem "forgery", group: [:development, :test]
-gem 'machinist', '>= 2.0.0.beta1', group: [:development, :test]
-gem 'simplecov', group: [:development, :test], require: false
-gem "database_cleaner", group: [:development, :test]
-gem 'turn', require: false, group: [:test]
+group :development do
+  gem 'foreman'
+end
+
+group :test do
+  gem 'rack-test', git: 'git://github.com/oriolgual/rack-test.git'
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'rspec-core', '~> 2.6.3.beta1'
+  gem 'email_spec', require: false
+  gem 'minitest'
+  gem 'mocha'
+  gem 'simplecov', require: false
+  gem 'database_cleaner'
+  gem 'turn', require: false, git: 'git://github.com/TwP/turn.git'
+  gem 'machinist', '>= 2.0.0.beta1'
+  gem 'launchy'
+  gem 'growl'
+  gem 'rb-fsevent'
+  gem 'guard'
+  gem 'guard-cucumber'
+  gem 'guard-minitest', git: 'git://github.com/oriolgual/guard-minitest.git', branch: 'add_support_for_drb'
+  gem 'guard-annotate'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
