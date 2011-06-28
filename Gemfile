@@ -31,8 +31,6 @@ group :test do
   gem 'rack-test', git: 'git://github.com/oriolgual/rack-test.git'
   gem 'capybara'
   gem 'cucumber-rails'
-  gem 'rspec-core', '~> 2.6.3.beta1'
-  gem 'email_spec', require: false
   gem 'minitest'
   gem 'mocha'
   gem 'simplecov', require: false

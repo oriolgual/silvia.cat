@@ -1,3 +1,1 @@
-class ActionDispatch::IntegrationTest
-  include Capybara::DSL
-end
+Capybara.default_selector = :css

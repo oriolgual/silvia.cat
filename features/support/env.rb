@@ -1,5 +1,3 @@
-require 'active_record'
-
 require 'simplecov'
 SimpleCov.start :rails do
   %w(Services Uploaders).each do |name|
@@ -12,19 +10,13 @@ end
 
 require 'cucumber/rails'
 require 'capybara/rails'
-require 'email_spec' # add this line if you use spork
-require 'email_spec/cucumber'
 
 Capybara.default_selector = :css
 
 ActionController::Base.allow_rescue = false
 
-DatabaseCleaner.strategy = :transaction
-
-include Warden::Test::Helpers
-After{ Warden.test_reset! }
-Devise.setup do |config|
-  config.stretches = 1
+begin
+  DatabaseCleaner.strategy = :transaction
+rescue NameError
+  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
-
-require File.join(Rails.root, 'test', 'blueprints')
