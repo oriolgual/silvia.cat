@@ -60,8 +60,8 @@ rvm use ruby-1.9.2-p180-patched
 ````
 More information about this topic:
 
-http://rhnh.net/2011/05/28/speeding-up-rails-startup-time
-http://www.rubyinside.com/get-edge-ruby-faster-loading-ruby-1-9-2-now-4973.html
+http://rhnh.net/2011/05/28/speeding-up-rails-startup-time  
+http://www.rubyinside.com/get-edge-ruby-faster-loading-ruby-1-9-2-now-4973.html 
 
 # Bundler
 
