@@ -6,6 +6,7 @@ gem "devise"
 gem "slim"
 gem "slim-rails"
 gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'rails31'
+gem 'sqlite3'
 
 # Asset template engines
 gem 'sass-rails'
