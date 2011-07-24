@@ -1,9 +1,9 @@
 development:
-  adapter: sqlite
+  adapter: sqlite3
   database: db/development.sqlite
   encoding: utf8
 
 test:
-  adapter: sqlite
+  adapter: sqlite3
   database: db/test.sqlite
   encoding: utf8
