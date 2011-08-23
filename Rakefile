@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Tripaliare::Application.load_tasks
+Silvia::Application.load_tasks
