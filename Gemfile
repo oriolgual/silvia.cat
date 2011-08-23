@@ -18,6 +18,7 @@ gem 'responders'
 gem 'button_form'
 gem "jquery-rails"
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'client_side_validations'
 gem 'high_voltage'
 gem 'ckeditor', '~> 3.6.0'
