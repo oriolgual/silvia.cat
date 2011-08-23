@@ -4,14 +4,11 @@ gem 'rails', git: 'https://github.com/rails/rails.git', branch: '3-1-stable'
 
 gem "devise"
 gem "slim"
-gem "slim-rails"
 gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'rails31'
-gem 'sqlite3'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Asset template engines
 gem 'sass-rails'
-gem 'coffee-script'
-gem 'barista'
 
 gem 'simple_form'
 gem "simple-navigation"
@@ -24,12 +21,8 @@ gem 'carrierwave'
 gem 'client_side_validations'
 gem 'high_voltage'
 
-group :development do
-  gem 'foreman'
-end
-
 group :test do
-  gem 'rack-test', git: 'git://github.com/oriolgual/rack-test.git'
+  gem 'rack-test'
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'minitest'
