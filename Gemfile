@@ -20,6 +20,7 @@ gem "jquery-rails"
 gem 'carrierwave'
 gem 'client_side_validations'
 gem 'high_voltage'
+gem 'ckeditor', '~> 3.6.0'
 
 group :test do
   gem 'rack-test'
