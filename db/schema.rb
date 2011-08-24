@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110823211412) do
+ActiveRecord::Schema.define(:version => 20110824194828) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(:version => 20110823211412) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "illustrations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "file"
+    t.text     "thumbnail_coordinates"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "illustrations_tags", :id => false, :force => true do |t|
+    t.integer "illustration_id"
+    t.integer "tag_id"
+  end
+
+  add_index "illustrations_tags", ["illustration_id"], :name => "index_illustrations_tags_on_illustration_id"
+  add_index "illustrations_tags", ["tag_id"], :name => "index_illustrations_tags_on_tag_id"
+
   create_table "rails_admin_histories", :force => true do |t|
     t.string   "message"
     t.string   "username"
@@ -40,6 +57,22 @@ ActiveRecord::Schema.define(:version => 20110823211412) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name"
+
+  create_table "tags_videos", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "video_id"
+  end
+
+  add_index "tags_videos", ["tag_id"], :name => "index_tags_videos_on_tag_id"
+  add_index "tags_videos", ["video_id"], :name => "index_tags_videos_on_video_id"
+
   create_table "users", :force => true do |t|
     t.string   "email",                              :default => "", :null => false
     t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
@@ -49,5 +82,13 @@ ActiveRecord::Schema.define(:version => 20110823211412) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
