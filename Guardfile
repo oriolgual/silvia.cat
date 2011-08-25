@@ -1,7 +1,3 @@
-guard 'annotate' do
-  watch( 'db/schema.rb' )
-end
-
 guard 'cucumber', cli: '--format progress --no-profile FAILFAST=true', all_on_start: false, keep_failed: false do
   watch(%r{features/.+\.feature})
 end

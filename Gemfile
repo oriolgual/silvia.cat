@@ -39,7 +39,7 @@ group :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-minitest'
-  gem 'guard-annotate'
+  gem 'guard-shell'
 end
 
 group :development, :test do
