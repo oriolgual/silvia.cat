@@ -1,14 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', git: 'https://github.com/rails/rails.git', branch: '3-1-stable'
+gem 'rails', '~> 3.1.0'
 
-gem "devise"
+gem "devise", '~> 1.4.3'
 gem "slim"
-gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'rails31'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
-# Asset template engines
-gem 'sass-rails'
+group :assets do
+  gem 'sass-rails', '~> 3.1.0'
+  gem 'compass', '~> 0.12.alpha'
+  gem "uglifier"
+end
 
 gem 'simple_form'
 gem "simple-navigation"
