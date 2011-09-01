@@ -155,7 +155,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
-    rake (0.9.2)
+    rake (0.9.3.beta.1)
     rb-fsevent (0.4.3.1)
     rdoc (3.9.4)
     responders (0.6.4)
@@ -235,6 +235,7 @@ DEPENDENCIES
   rack-test
   rails (~> 3.1.0)
   rails_admin!
+  rake (~> 0.9.3.beta.1)
   rb-fsevent
   responders
   sass-rails (~> 3.1.0)

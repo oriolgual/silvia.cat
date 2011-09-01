@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1.0'
+gem 'rake', '~> 0.9.3.beta.1'
 
 gem "devise", '~> 1.4.3'
 gem "slim"
