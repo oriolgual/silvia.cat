@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 describe Illustration do
   subject { Illustration.make }
@@ -48,7 +48,8 @@ describe Illustration do
 
     it 'serializes thumbnail_coordinates as a Hash' do
       subject.thumbnail_coordinates = [0, 0, 100, 100, 100, 100]
-      subject.save
+      p subject.inspect
+      subject.save!
 
       Proc.new {
         Illustration.find(subject.id)

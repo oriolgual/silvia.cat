@@ -1,7 +1,5 @@
-require 'test_helper'
+require 'spec_helper'
 
-class VideoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Video do
+
 end

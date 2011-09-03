@@ -40,5 +40,5 @@ class MiniTest::Unit::TestCase
 end
 
 require File.expand_path(File.dirname(__FILE__) + '/blueprints')
-Dir[Rails.root.join("test/support/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join("specs/support/**/*.rb")].each {|f| require f}
 require 'minitest/autorun'
