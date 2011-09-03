@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20110824194828) do
   create_table "illustrations", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "file"
+    t.string   "image"
     t.text     "thumbnail_coordinates"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -3,7 +3,7 @@ class CreateIllustrations < ActiveRecord::Migration
     create_table :illustrations do |t|
       t.string :name
       t.text :description
-      t.string :file
+      t.string :image
       t.text :thumbnail_coordinates
 
       t.timestamps

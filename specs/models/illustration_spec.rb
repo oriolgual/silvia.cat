@@ -11,11 +11,11 @@ describe Illustration do
       subject.errors[:name].wont_be_empty
     end
 
-    it 'is not valid without a file' do
-      subject.remove_file!
+    it 'is not valid without a image' do
+      subject.remove_image!
 
       subject.valid?.must_equal false
-      subject.errors[:file].wont_be_empty
+      subject.errors[:image].wont_be_empty
     end
 
     it 'is not valid without thumbnail coordinates on update' do
@@ -37,7 +37,7 @@ describe Illustration do
 
   describe 'uploaders' do
     it 'has an image uploader mounted' do
-      subject.file.must_be_kind_of ImageUploader
+      subject.image.must_be_kind_of ImageUploader
     end
   end
 
@@ -48,7 +48,6 @@ describe Illustration do
 
     it 'serializes thumbnail_coordinates as a Hash' do
       subject.thumbnail_coordinates = [0, 0, 100, 100, 100, 100]
-      p subject.inspect
       subject.save!
 
       Proc.new {
