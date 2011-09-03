@@ -18,6 +18,13 @@ describe Illustration do
       subject.errors[:image].wont_be_empty
     end
 
+    it 'is not valid without tags' do
+      subject.tags = []
+
+      subject.valid?.must_equal false
+      subject.errors[:tags].wont_be_empty
+    end
+
     it 'is not valid without thumbnail coordinates on update' do
       subject.thumbnail_coordinates = nil
       subject.save
