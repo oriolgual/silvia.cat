@@ -3,9 +3,9 @@ guard 'cucumber', cli: '--format progress --no-profile FAILFAST=true', all_on_st
 end
 
 guard 'minitest', drb: false do
-  watch(%r{app/(.+)/(.+)\.rb})                  { |m| "test/#{m[1]}/#{m[2]}_test.rb" }
-  watch(%r{test/(.+)/(.+)_test\.rb})
-  watch(%r{test/test_helper.rb})                { "test" }
+  watch(%r{app/(.+)/(.+)\.rb})                  { |m| "specs/#{m[1]}/#{m[2]}_spec.rb" }
+  watch(%r{specs/(.+)/(.+)_spec\.rb})
+  watch(%r{specs/spec_helper.rb})               { "test" }
 end
 
 guard 'shell' do
