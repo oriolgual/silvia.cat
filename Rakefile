@@ -4,4 +4,15 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+unless Rails.env.production?
+  include Rake::DSL
+  require 'rake/testtask'
+
+  Rake::TestTask.new do |t|
+    t.libs << 'specs'
+    t.pattern = 'specs/**/*_spec.rb'
+    t.verbose = true
+  end
+end
+
 Silvia::Application.load_tasks
