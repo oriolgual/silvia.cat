@@ -10,3 +10,9 @@ end
 Tag.blueprint do
   name { "Tag #{sn}" }
 end
+
+Video.blueprint do
+  name { "Video #{sn}" }
+  url  { "http://www.youtube.com/watch?v=uNjIWiocYpg" }
+  tags { [Tag.make] }
+end
