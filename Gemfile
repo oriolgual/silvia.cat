@@ -5,7 +5,7 @@ gem 'rake', '~> 0.9.3.beta.1'
 
 gem "devise", '~> 1.4.3'
 gem "slim"
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin', :path => '../rails_admin'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0'
