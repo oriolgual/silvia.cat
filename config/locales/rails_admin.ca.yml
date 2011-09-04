@@ -1,0 +1,104 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ca:
+  home:
+    name: "inici"
+  admin:
+    dashboard:
+      pagename: "Administració de la pàgina"
+      name: "Panell"
+      model_name: "Nom del model"
+      last_used: "Últim ús"
+      records: "Registres"
+      modify: "Modificar"
+      add_new: "Afegir"
+      show: "Veure"
+      ago: "enrere"
+    history:
+      name: "Historial"
+      page_name: "Historial de %{name}"
+      no_activity: "Cap activitat"
+    show:
+      show_in_app: "Veure a l'aplicació"
+      page_name: "Detalls per %{name}"
+      no_file_found: "No s'ha trobat cap arxiu"
+    credentials:
+      log_out: "Sortir"
+    list:
+      edit_action: "Editar"
+      delete_action: "Eliminar"
+      select_action: "Sel·leccionar"
+      export_action: "Exportar vista actual"
+      show_action: "Veure"
+      export_selected: "Exportar sel·leccionats"
+      delete_selected: "Eliminar sel·leccionats"
+      add_new: "Afegir"
+      search: "Cercar"
+      select: "Sel·leccionar %{name} per editar"
+      show_all: "Veure-ho tot"
+      add_filter: "Afegir filtre"
+    new:
+      basic_info: "Informació bàsica"
+      required: "Necessari"
+      optional: "Opcional"
+      one_char: "caràcter"
+      many_chars: "caràcter o menys"
+      chosen: "Sel·leccionat %{name}"
+      select_choice: "Sel·lecciona la/les opció/opcions i clica"
+      chose_all: "Sel·leccionar-ho tot"
+      clear_all: "Netejar-ho tot"
+      up: "Amunt"
+      down: "Avall"
+      save: "Guardar"
+      save_and_add_another: "Guardar i afegir-ne un altre"
+      save_and_edit: "Guardar i editar"
+      cancel: "Cancel·lar"
+    delete:
+      all_of_the_following_related_items_will_be_deleted: "? Els següents elements relacionats s'elminaran o quedaran orfes:"
+      are_you_sure_you_want_to_delete_the_object: "Segur que vols eliminar aquest/a %{model_name}"
+      confirmation: "Sí, segur"
+      delete_confirmation: "Confirmar eliminació"
+      bulk_delete: "Els segúents objectes s'eliminaran, pot ser que també eliminim o deixin orfes algunes dependències:"
+    export:
+      confirmation: "Exportar a %{name}"
+      select: "Sel·leccionar els camps a exportar"
+      fields_from: "Camps de %{name}"
+      fields_from_associated: "Camps associat amb %{name}"
+      display: "Mostrar %{name}: %{type}"
+      options_for: "Opcions per %{name}"
+      empty_value_for_associated_objects: "<buit>"
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Codificar a"
+        encoding_to_help: "Escull la codificació de sortida. Deixa-ho buit per mantenir l'actual d'entrada: (%{name})"
+        skip_header: "Sense capçalera"
+        skip_header_help: "No imprimir la capçalera (sense descripció dels camps)"
+        default_col_sep: ","
+        col_sep: "Separador de columna"
+        col_sep_help: "Deixa-ho buit per l'opció per defecte ('%{value}')" # value is default_col_sep
+    flash:
+      successful: "%{name} correctament %{action}"
+      error: "%{name} no s'ha pogut %{action}"
+      noaction: "No s'ha produït cap acció"
+    actions:
+      create: "afegir"
+      created: "creat/da"
+      update: "modificar"
+      updated: "modificat/da"
+      delete: "eliminar"
+      deleted: "eliminat/da"
+      export: "exportar"
+      exported: "exportat/da"
+    breadcrumbs:
+      delete: "eliminar"
+      history: "historial"
+      show: "veure"
+      edit: "editar"
+      export: "exportar"
+      bulk_destroy: "eliminar"
+      new: "afegir"
+      model_history: "historial"
+      list: "llista"
+      dashboard: "panell"

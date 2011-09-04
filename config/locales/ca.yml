@@ -1,0 +1,10 @@
+ca:
+  activerecord:
+    models:
+      illustration: "Il·lustració"
+      illustrations: "Il·lustracions"
+    attributes:
+      illustration:
+        name: Nom
+        description: Descripció
+        image: Imatge
