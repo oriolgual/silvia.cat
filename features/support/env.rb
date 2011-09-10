@@ -11,8 +11,6 @@ end
 require 'cucumber/rails'
 require 'capybara/rails'
 
-Capybara.default_selector = :css
-
 ActionController::Base.allow_rescue = false
 
 begin
