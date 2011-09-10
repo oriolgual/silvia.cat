@@ -13,20 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20110824194828) do
 
-  create_table "ckeditor_assets", :force => true do |t|
-    t.string   "data_file_name",                  :null => false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    :limit => 30
-    t.string   "type",              :limit => 30
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
-
   create_table "illustrations", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -44,19 +30,6 @@ ActiveRecord::Schema.define(:version => 20110824194828) do
   add_index "illustrations_tags", ["illustration_id"], :name => "index_illustrations_tags_on_illustration_id"
   add_index "illustrations_tags", ["tag_id"], :name => "index_illustrations_tags_on_tag_id"
 
-  create_table "rails_admin_histories", :force => true do |t|
-    t.string   "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -72,16 +45,6 @@ ActiveRecord::Schema.define(:version => 20110824194828) do
 
   add_index "tags_videos", ["tag_id"], :name => "index_tags_videos_on_tag_id"
   add_index "tags_videos", ["video_id"], :name => "index_tags_videos_on_video_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "email",                              :default => "", :null => false
-    t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
-    t.datetime "remember_created_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "videos", :force => true do |t|
     t.string   "name"

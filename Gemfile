@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.1.0'
 gem 'rake', '~> 0.9.3.beta.1'
 
-gem "devise", '~> 1.4.4'
 gem "slim"
 
 group :assets do
@@ -25,14 +24,13 @@ gem 'client_side_validations'
 gem 'high_voltage'
 
 group :test do
-  gem 'rack-test'
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'minitest'
   gem 'mocha'
   gem 'simplecov', require: false
   gem 'database_cleaner'
-  gem 'turn', require: false
+  gem 'turn', require: false, git: 'git://github.com/TwP/turn'
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'launchy'
   gem 'growl'
