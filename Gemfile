@@ -22,6 +22,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'client_side_validations'
 gem 'high_voltage'
+gem 'kaminari'
+gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 
 group :test do
   gem 'capybara'
