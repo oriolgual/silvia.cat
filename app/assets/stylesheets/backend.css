@@ -2,5 +2,6 @@
  *= require web-app-theme/base
  *= require web-app-theme/style
  *= require formalize
+ *= require jcrop
  *= require_tree ./backend
  */
