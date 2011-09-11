@@ -12,7 +12,6 @@ group :assets do
 end
 
 gem 'simple_form'
-gem "simple-navigation"
 gem 'inherited_resources'
 gem 'flash_messages_helper'
 gem 'responders'
@@ -20,10 +19,9 @@ gem 'button_form'
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'client_side_validations'
-gem 'high_voltage'
 gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
+gem 'formalize-rails'
 
 group :test do
   gem 'capybara'
@@ -45,4 +43,5 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'pry'
 end
