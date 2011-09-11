@@ -1,10 +1,9 @@
 Silvia::Application.routes.draw do
-  root to: "home#index"
+  root to: 'home#index'
   namespace :backend do
-    root to: "products#index"
-    resources :products do
-      post :deactivate_widgets
-    end
-    resources :widgets
+    root to: 'illustrations#index'
+    resources :illustrations
+    resources :tags
+    resources :videos
   end
 end
