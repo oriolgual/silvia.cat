@@ -1,0 +1,8 @@
+dl
+  - (attributes - %w(image thumbnail_coordinates)).each do |attr|
+    dt= resource_class.human_attribute_name(attr)
+    dd= resource.public_send(attr)
+  dt= resource_class.human_attribute_name(:image)
+  dd= image_tag resource.image.url
+  dt= resource_class.human_attribute_name(:tags)
+  dd= resource.tags.map(&:name).join(', ')

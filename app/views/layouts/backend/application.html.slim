@@ -1,0 +1,47 @@
+doctype
+html
+  head
+    title Administració silvia.cat
+    = stylesheet_link_tag "backend"
+    = javascript_include_tag "backend"
+    = csrf_meta_tag
+  body
+    #container
+      #header
+        h1= link_to "silvia.cat", backend_root_path
+        #user-navigation
+          ul.wat-cf
+            li= link_to "Profile", "#"
+            li= link_to "Settings", "#"
+        #main-navigation
+          ul.wat-cf
+            - %w(illustration tag video).each do |model|
+              li=link_to I18n.t(model.classify.constantize.model_name.plural, scope: 'activerecord.models', default: model.classify.constantize.model_name.human.pluralize), send("backend_#{model.classify.constantize.model_name.plural}_path")
+      #wrapper.wat-cf
+        .flash
+          - if flash[:alert]
+            .message.error
+              p= flash[:alert]
+          - if flash[:notice]
+            .message.notice
+              p= flash[:notice]
+
+
+        #main
+          = yield
+          #footer
+            .block
+              p Copyright &copy; #{Time.now.year}
+        #sidebar
+          = yield :sidebar
+          .block.notice
+            h4 Simple Backend Example
+            p This is an example of creating your own backend in Rails 3.1.
+            p
+              | Learn more about it on
+              '
+              = link_to "iain.nl", "http://iain.nl/backends-in-rails-3-1"
+              '
+              ' or find the source on
+              '
+              = link_to "github", "https://github.com/iain/simple-backend-example"

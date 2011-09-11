@@ -1,0 +1,5 @@
+= simple_form_for [ :backend, resource ] do |f|
+  - attributes.each do |attr|
+    = f.input attr
+  = f.association :tags, collection: Tag.all
+  = f.submit

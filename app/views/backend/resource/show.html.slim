@@ -1,0 +1,14 @@
+.block
+  .content
+    h2= resource_class.model_name.human
+    .inner
+      = render "show"
+
+= content_for :sidebar do
+  .block
+    h3 Navigation
+    ul.navigation
+      li= link_to "Back", collection_path
+      li= link_to "Edit", edit_resource_path
+      li= link_to "Destroy", resource_path, method: :delete, confirm: "Are you sure?"
+      = yield :actions
