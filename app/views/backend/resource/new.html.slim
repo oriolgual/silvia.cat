@@ -3,7 +3,6 @@
     h2 New #{resource_class.model_name.human}
 
     .inner
-      - attributes = resource_class.attribute_names - %w(id created_at updated_at thumbnail_coordinates)
       = render "form", attributes: attributes
 
 = content_for :sidebar do
