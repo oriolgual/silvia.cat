@@ -25,12 +25,25 @@ describe Illustration do
       subject.errors[:tags].wont_be_empty
     end
 
-    it 'is not valid without thumbnail coordinates on update' do
-      subject.thumbnail_coordinates = nil
-      subject.save
+    describe 'thumbnail_coordinates validation' do
+      it 'is not valid without thumbnail coordinates on update if image has not changed' do
+        subject.save!
 
-      subject.valid?.must_equal false
-      subject.errors[:thumbnail_coordinates].wont_be_empty
+        subject.thumbnail_coordinates = nil
+
+        subject.valid?.must_equal false
+        subject.errors[:thumbnail_coordinates].wont_be_empty
+      end
+
+      it 'is valid without thumbnail coordinates on update if image has changed' do
+        subject.save!
+
+        subject.remove_image!
+        subject.image = File.open(Rails.root.join('specs/support/files/illustration.jpg'))
+        subject.thumbnail_coordinates = nil
+
+        subject.valid?.must_equal true
+      end
     end
   end
 

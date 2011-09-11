@@ -5,7 +5,7 @@ class Illustration < ActiveRecord::Base
 
   # Only validate thumbnail_coordinates on update since the creation process
   # does not allow to choose the coordinates
-  validates :thumbnail_coordinates, presence: true, on: :update
+  validates :thumbnail_coordinates, presence: true, on: :update, unless: :image_changed?
 
   # Tags are needed in order to classify the illustration
   has_and_belongs_to_many :tags
