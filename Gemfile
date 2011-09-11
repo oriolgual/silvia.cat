@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'formalize-rails'
+gem 'jcrop-rails'
 
 group :test do
   gem 'capybara'
