@@ -24,6 +24,10 @@ gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'formalize-rails'
 gem 'jcrop-rails'
 
+group :development do
+  gem 'rack-webconsole'
+end
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails'

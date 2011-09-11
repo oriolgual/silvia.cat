@@ -148,6 +148,9 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rack-webconsole (0.1.2)
+      json
+      rack
     rails (3.1.0)
       actionmailer (= 3.1.0)
       actionpack (= 3.1.0)
@@ -240,6 +243,7 @@ DEPENDENCIES
   minitest
   mocha
   pry
+  rack-webconsole
   rails (~> 3.1.0)
   rake (~> 0.9.3.beta.1)
   rb-fsevent
