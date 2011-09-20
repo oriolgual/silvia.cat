@@ -1,4 +1,7 @@
-require 'spec_helper'
+require 'fast_spec_helper'
+
+require_model 'video'
+require_blueprints
 
 describe Video do
   subject { Video.make }

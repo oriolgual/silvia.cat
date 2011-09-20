@@ -1,4 +1,7 @@
-require 'spec_helper'
+require 'fast_spec_helper'
+
+require_model 'tag'
+require_blueprints
 
 describe Tag do
 

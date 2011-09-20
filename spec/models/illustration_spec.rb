@@ -1,4 +1,5 @@
-require 'spec_helper'
+require_relative '../fast_spec_helper'
+require_blueprints
 
 describe Illustration do
   subject { Illustration.make }
@@ -39,7 +40,7 @@ describe Illustration do
         subject.save!
 
         subject.remove_image!
-        subject.image = File.open(Rails.root.join('specs/support/files/illustration.jpg'))
+        subject.image = File.open(File.expand_path(File.dirname(File.dirname(__FILE__)) + '/support/files/illustration.jpg'))
         subject.thumbnail_coordinates = nil
 
         subject.valid?.must_equal true
