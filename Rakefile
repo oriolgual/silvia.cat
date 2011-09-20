@@ -9,8 +9,8 @@ unless Rails.env.production?
   require 'rake/testtask'
 
   Rake::TestTask.new do |t|
-    t.libs << 'specs'
-    t.pattern = 'specs/**/*_spec.rb'
+    t.libs << 'spec'
+    t.pattern = 'spec/**/*_spec.rb'
     t.verbose = true
   end
 end
