@@ -37,7 +37,6 @@ group :test do
   gem 'mocha'
   gem 'simplecov', require: false
   gem 'database_cleaner'
-  gem 'turn', require: false, git: 'git://github.com/TwP/turn'
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'launchy'
   gem 'growl'
