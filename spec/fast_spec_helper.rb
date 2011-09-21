@@ -12,14 +12,18 @@ def setup_active_record
   end
 end
 
-def require_model(model)
+def require_model(file)
   setup_active_record
-  require_relative "../app/models/#{model}"
+  require_relative "../app/models/#{file}"
 end
 
-def require_uploader(uploader)
+def require_uploader(file)
   require_carrierwave
-  require_relative "../app/uploaders/#{uploader}"
+  require_relative "../app/uploaders/#{file}"
+end
+
+def require_service(file)
+  require_relative "../app/services/#{file}"
 end
 
 def require_carrierwave
@@ -28,5 +32,13 @@ def require_carrierwave
 end
 
 def require_blueprints
-  require_relative "blueprints"
+  require_relative 'blueprints'
+end
+
+def require_foo
+  require_relative 'support/foo_model'
+end
+
+def rails_root
+  File.expand_path(File.dirname(__FILE__))
 end
