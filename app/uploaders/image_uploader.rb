@@ -4,24 +4,28 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   storage :file
-  # storage :fog
-  process :resize_to_limit => [480, 'X']
 
+  # Main version, restrict the height to 480px
+  #
+  version :main do
+    process resize_to_limit: ['X', 480]
+  end
+
+  # Thumbnail version. Crop the image with the model coordinates and then
+  # resize it to 100x100
+  #
   version :thumbnail do
     process :crop
     process resize_to_fill:  [100, 100]
   end
 
+  # Tell ImageMagick to crop the image with the model coordinates
+  #
   def crop
     return unless model.can_be_cropped?
     manipulate! do |image|
-      x = model.thumbnail_coordinates['x'].to_i
-      y = model.thumbnail_coordinates['y'].to_i
-      height = model.thumbnail_coordinates['h'].to_i
-      width = model.thumbnail_coordinates['w'].to_i
-
-      image.combine_options do |cmd|
-        cmd.crop("#{width}x#{height}+#{x}+#{y}")
+      image.combine_options do |command|
+        command.crop(model.magick_thumbnail_coordinates)
       end
       image
     end
@@ -32,6 +36,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg png)
   end
 end
