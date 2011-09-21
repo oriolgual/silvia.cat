@@ -6,11 +6,6 @@ require_model 'illustration'
 require_model 'tag'
 require_model 'video'
 
-Foo.blueprint do
-  image { File.open(rails_root + '/support/files/illustration.jpg') }
-  thumbnail_coordinates { {x1: 0, y1: 0, x2: 100, y2: 100, width: 100, height: 100} }
-end
-
 Illustration.blueprint do
   name { "Illustration #{sn}" }
   image { File.open(rails_root + '/support/files/illustration.jpg') }
