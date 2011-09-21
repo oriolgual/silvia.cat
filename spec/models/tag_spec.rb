@@ -1,11 +1,9 @@
 require 'fast_spec_helper'
-
 require_model 'tag'
-require_blueprints
 
 describe Tag do
 
-  subject { Tag.make }
+  subject { Tag.new }
 
   describe 'validations' do
     it 'is not valid without a name' do
