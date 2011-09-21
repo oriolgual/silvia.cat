@@ -1,15 +1,18 @@
-require 'simplecov'
-SimpleCov.start :rails do
-  %w(Services Uploaders).each do |name|
-    add_group name, "app/#{name.downcase}"
-  end
-  add_filter do |source_file|
-    source_file.filename =~ %r{vendor/plugins}
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start :rails do
+    %w(Services Uploaders).each do |name|
+      add_group name, "app/#{name.downcase}"
+    end
+    add_filter do |source_file|
+      source_file.filename =~ %r{vendor/plugins}
+    end
   end
 end
 
 require 'cucumber/rails'
 require 'capybara/rails'
+require Rails.root.join('spec/blueprints')
 
 ActionController::Base.allow_rescue = false
 

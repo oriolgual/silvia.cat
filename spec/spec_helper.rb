@@ -1,18 +1,20 @@
-require 'simplecov'
-SimpleCov.start do
-  %w(Models Helpers Services Cells Observers Uploaders).each do |name|
-    add_group name, "app/#{name.downcase}"
-  end
-  add_filter '/test/'
-  add_filter '/features/'
-  add_filter '/config/'
-  add_filter '/db/'
-  add_filter '/vendor/'
-  add_filter '/lib/'
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start do
+    %w(Models Helpers Services Cells Observers Uploaders).each do |name|
+      add_group name, "app/#{name.downcase}"
+    end
+    add_filter '/test/'
+    add_filter '/features/'
+    add_filter '/config/'
+    add_filter '/db/'
+    add_filter '/vendor/'
+    add_filter '/lib/'
 
-  # Tested at an integration level
-  add_filter '/app\/controllers/'
-  add_filter '/app\/mailers/'
+    # Tested at an integration level
+    add_filter '/app\/controllers/'
+    add_filter '/app\/mailers/'
+  end
 end
 
 ENV["RAILS_ENV"] = "test"
