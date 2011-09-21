@@ -9,7 +9,9 @@ class CreateFoos < ActiveRecord::Migration
   end
 end
 
-CreateFoos.up unless ActiveRecord::Base.connection.table_exists?('foos')
+silence_stream(STDOUT) do
+  CreateFoos.up unless ActiveRecord::Base.connection.table_exists?('foos')
+end
 
 class Foo < ActiveRecord::Base
   include Thumbnailer
