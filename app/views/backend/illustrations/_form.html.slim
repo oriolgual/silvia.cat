@@ -3,7 +3,7 @@
     = f.input attr
 
   #illustration
-    = f.file_field :image
+    = f.input :image
     = f.hidden_field :image_cache
     - if resource.image?
       = f.hidden_field :thumbnail_coordinates
