@@ -2,7 +2,6 @@ require_relative '../fast_spec_helper'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
 require_foo
-require_blueprints
 
 describe Thumbnailer do
   subject { Foo.make }
