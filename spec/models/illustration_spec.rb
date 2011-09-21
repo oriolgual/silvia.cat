@@ -3,7 +3,7 @@ require_service 'thumbnailer'
 require_blueprints
 
 describe Illustration do
-  subject { Illustration.make }
+  subject { Illustration.new }
 
   it 'has thumbnailing support' do
     Illustration.ancestors.must_include Thumbnailer
