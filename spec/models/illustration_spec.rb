@@ -5,6 +5,10 @@ require_blueprints
 describe Illustration do
   subject { Illustration.make }
 
+  it 'has thumbnailing support' do
+    Illustration.ancestors.must_include Thumbnailer
+  end
+
   describe 'validations' do
     it 'is not valid without a name' do
       subject.name = nil
