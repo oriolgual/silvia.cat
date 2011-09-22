@@ -1,6 +1,5 @@
 .bundle
 db/*.sqlite*
-config/database.yml
 log/*.log
 tmp/
 coverage/
