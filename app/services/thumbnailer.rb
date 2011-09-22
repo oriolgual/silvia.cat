@@ -23,7 +23,7 @@ module Thumbnailer
     # using javascript.
     #
     # Example:
-    #   { x1: 0, y1: 0, x2: 100, y2: 100, width: 100, height: 100 }
+    #   { x: 0, y: 100, h: 100, w: 100 }
     #
     serialize :thumbnail_coordinates, Hash
 
@@ -53,10 +53,10 @@ module Thumbnailer
   # A helper to return the thumbnail_coordinates in a friendly format for
   # ImageMagick.
   def magick_thumbnail_coordinates
-    x = model.thumbnail_coordinates['x'].to_i
-    y = model.thumbnail_coordinates['y'].to_i
-    height = model.thumbnail_coordinates['h'].to_i
-    width = model.thumbnail_coordinates['w'].to_i
+    x = thumbnail_coordinates['x'].to_i
+    y = thumbnail_coordinates['y'].to_i
+    height = thumbnail_coordinates['h'].to_i
+    width = thumbnail_coordinates['w'].to_i
     "#{width}x#{height}+#{x}+#{y}"
   end
 
