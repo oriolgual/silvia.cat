@@ -1,5 +1,57 @@
 = simple_form_for [ :backend, resource ] do |f|
-  - attributes.each do |attr|
+  - (attributes - ['image']).each do |attr|
     = f.input attr
+
+  #illustration
+    = f.input :image
+    = f.hidden_field :image_cache
+    - if resource.image?
+      = f.hidden_field :thumbnail_coordinates
+      = image_tag(resource.image_url, id: 'image') if resource.image?
+
+      #thumb_container
+        = image_tag resource.image.url, id: 'thumb'
+
   = f.association :tags, collection: Tag.all
   = f.submit
+
+javascript:
+  $(function(){
+
+    $('#image').Jcrop({
+      onChange: showPreview,
+      onSelect: showPreview,
+      aspectRatio: 1
+    });
+  });
+
+
+  function showPreview(coords)
+  {
+    var image = $('#image');
+    var thumb_container = $('#thumb_container');
+    var thumb_input = $('#illustration_thumbnail_coordinates')
+
+    var rx = thumb_container.width() / coords.w;
+    var ry = thumb_container.height() / coords.h;
+
+    var json = JSON.stringify(coords);
+
+    if (thumb_input.length > 0) {
+      thumb_input[0].value = json;
+    }
+
+    $('#thumb').css({
+      width: Math.round(rx * image.width()) + 'px',
+      height: Math.round(ry * image.height()) + 'px',
+      marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+      marginTop: '-' + Math.round(ry * coords.y) + 'px'
+    });
+  };
+
+-unless resource.thumbnail_coordinates.blank?
+  javascript:
+    $(function(){
+      var coords = #{resource.thumbnail_coordinates.to_json.html_safe};
+      showPreview(coords);
+    });

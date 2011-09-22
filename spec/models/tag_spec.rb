@@ -1,8 +1,9 @@
-require 'spec_helper'
+require 'fast_spec_helper'
+require_model 'tag'
 
 describe Tag do
 
-  subject { Tag.make }
+  subject { Tag.new }
 
   describe 'validations' do
     it 'is not valid without a name' do

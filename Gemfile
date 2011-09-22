@@ -23,6 +23,8 @@ gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'formalize-rails'
 gem 'jcrop-rails'
+gem 'foreman'
+gem 'unicorn'
 
 group :development do
   gem 'rack-webconsole'
@@ -35,7 +37,6 @@ group :test do
   gem 'mocha'
   gem 'simplecov', require: false
   gem 'database_cleaner'
-  gem 'turn', require: false, git: 'git://github.com/TwP/turn'
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'launchy'
   gem 'growl'

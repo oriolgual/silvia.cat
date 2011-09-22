@@ -3,45 +3,6 @@ dl
     dt= resource_class.human_attribute_name(attr)
     dd= resource.public_send(attr)
   dt= resource_class.human_attribute_name(:image)
-  dd= image_tag resource.image.url, id: 'image'
-  dd
-    #thumb_container
-      = image_tag resource.image.url, id: 'thumb'
+  dd= image_tag resource.image.thumbnail.url, id: 'thumb'
   dt= resource_class.human_attribute_name(:tags)
   dd= resource.tags.map(&:name).join(', ')
-
-javascript:
-  $(function(){
-
-    $('#image').Jcrop({
-      onChange: showPreview,
-      onSelect: showPreview,
-      aspectRatio: 1
-    });
-  });
-
-
-  function showPreview(coords)
-  {
-    var image = $('#image');
-    var thumb_container = $('#thumb_container');
-
-    var rx = thumb_container.width() / coords.w;
-    var ry = thumb_container.height() / coords.h;
-
-    var json = JSON.stringify(coords);
-
-    $('#thumb').css({
-      width: Math.round(rx * image.width()) + 'px',
-      height: Math.round(ry * image.height()) + 'px',
-      marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-      marginTop: '-' + Math.round(ry * coords.y) + 'px'
-    });
-  };
-
--unless resource.thumbnail_coordinates.blank?
-  javascript:
-    $(function(){
-      var coords = #{resource.thumbnail_coordinates.to_json.html_safe};
-      showPreview(coords);
-    });

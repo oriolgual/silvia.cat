@@ -1,7 +1,9 @@
-require 'spec_helper'
+require 'fast_spec_helper'
+require_model 'tag'
+require_model 'video'
 
 describe Video do
-  subject { Video.make }
+  subject { Video.new }
 
   describe 'validations' do
     it 'is not valid without a name' do
