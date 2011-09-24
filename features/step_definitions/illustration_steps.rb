@@ -10,7 +10,7 @@ When /^I fill the illustration form with all the necessary data$/ do
   fill_in 'Descripció', with: 'Personatge per un còmic'
   attach_file 'Imatge', Rails.root.join('spec/support/files/illustration.jpg')
   select(@current_tag.name, from: 'Tags')
-  find('#illustration_thumbnail_coordinates').set('{"x":0,"y":0,"w":10,"h":10}')
+  find('input#illustration_thumbnail_coordinates').set('{"x":0,"y":0,"w":10,"h":10}')
   click_button 'Crear Il·lustració'
 end
 
