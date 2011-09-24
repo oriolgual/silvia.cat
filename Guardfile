@@ -1,4 +1,4 @@
-guard 'cucumber', cli: '--format progress --no-profile FAILFAST=true', all_on_start: false, keep_failed: false do
+guard 'cucumber', cli: '--format progress --no-profile FAILFAST=true', all_on_start: false, keep_failed: false, all_after_pass: false do
   watch(%r{features/.+\.feature})
 end
 
