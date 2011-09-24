@@ -206,7 +206,7 @@ ca:
 
     submit:
       create: 'Crear %{model}'
-      update: 'Actualizar %{model}'
+      update: 'Actualitzar %{model}'
       submit: 'Guardar %{model}'
 
 

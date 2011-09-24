@@ -14,7 +14,7 @@ ca:
         notice: '%{resource_name} creada correctament.'
         alert: '%{resource_name} could not be created.'
       update:
-        notice: '%{resource_name} was successfully updated.'
+        notice: '%{resource_name} actualitzada correctament.'
         alert: '%{resource_name} could not be updated.'
       destroy:
         notice: '%{resource_name} was successfully destroyed.'
