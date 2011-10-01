@@ -1,0 +1,135 @@
+@import base
+@import compass
+@import blueprint
+@import blueprint/scaffolding
+@import compass/css3
+@import "blueprint/grid"
+@import "compass/utilities/lists/horizontal-list"
+@import "compass/css3/images"
+@import "compass/utilities/lists/bullets"
+@import "blueprint/buttons"
+@import "compass/css3/text-shadow"
+
+
+
+body
+  +global-reset
+  +blueprint-typography(true)
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+  +blueprint-scaffolding
+  padding: 10px
+
+#container
+  +container
+  #content
+    +column(20, true)
+    margin: 0px
+
+    #header
+      margin-left: 17px
+      +column(20, true)
+      ul.menu
+        height: 30px
+        +horizontal-list
+        background: image-url("button_menu.png")
+        li
+          margin-left: 20px
+          padding-top: 9px
+          margin-right: 7px
+
+    #header_submenu
+      margin-left: 17px
+      +column(20, true)
+      ul.menu
+        height: 30px
+        +horizontal-list
+        background: image-url("button_menu.png")
+        li
+          margin-right: 20px
+          padding-top: 9px
+          margin-left: 20px
+          
+  #sidebar
+    +column(4, true)
+    .logo
+      margin-left: 15px
+      width: 150px
+      background-repeat: no-repeat
+      li.menu_right
+    .links
+      +horizontal-list
+      +single-text-shadow
+      font-size: 12px
+      margin-bottom: 10px
+      height: 16px
+      padding: 9px
+      line-height: 24px
+      background: image-url("button_sidebar.png")
+
+
+  #footer
+    +column(24)
+
+
+#menu_right
+  border: 1px
+  margin-bottom: 20px
+
+#gallery_content
+  +column(6, true)
+  height: 440px
+  #content_thumbnail
+    height: 430px
+    ul
+      margin-left: -15px
+      .thumbnail
+        +column(2.5)
+        margin-right: 0px
+        margin-bottom: 15px
+        margin-left: 15px
+        height: 90px
+
+#content_large_image 
+  margin-top: 18px
+  width: 630px
+  +column(14, true)
+  .vertical_large_img
+    width: 650px
+    height: 480px //ALÇADA MAXIMA DE LES IMGS EN VERTICAL//
+    margin-right: 0px
+
+#pages_link
+  margin-left: 20px
+  .gallery_link
+    float: left
+    margin-right: 10px
+    height: 30px
+    width: 30px
+    font-size: 30px
+    font-weight: bold
+    background: #EEE
+    padding-left: 15px
+    padding-bottom: 15px
+    +single-text-shadow
+
+#thumbcaption
+  +column(14, true)
+  width: 250px
+  height: 100px
+  background: #EEEEEE
+  float: right
+  margin-bottom: 20px
+  .title_thumbcaption
+    font-weight: bold
+    padding-left: 15px
+    height: 20px
+    padding-top: 4px
+    border-bottom: 4px solid white
+    .txt_thumbcaption
+      margin-top: 20px
+      font-size: 12px
+      font-weight: normal

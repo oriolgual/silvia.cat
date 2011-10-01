@@ -1,0 +1,20 @@
+html
+  head
+    title Example title
+    meta charset='utf-8'
+    link rel="stylesheet" href="/stylesheets/application.css"
+  body
+    #container
+      
+      #sidebar
+        == render partial: 'sidebar'
+
+      #content
+        #header
+          == render partial: 'header'
+        #header_submenu
+          == render partial: 'header_submenu'
+        == render partial: 'content'
+
+        #content_large_image
+          == render partial: 'vertical_img_gallery'
