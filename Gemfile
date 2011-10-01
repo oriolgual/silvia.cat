@@ -27,6 +27,7 @@ gem 'unicorn'
 
 group :development do
   gem 'rack-webconsole'
+  gem 'heroku'
 end
 
 group :test do
