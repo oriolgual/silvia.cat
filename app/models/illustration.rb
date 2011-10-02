@@ -3,8 +3,8 @@
 class Illustration < ActiveRecord::Base
   include Thumbnailer
 
-  validates :name, :tags, presence: true
+  validates :name, :category, presence: true
 
-  # Tags are needed in order to classify the illustration
-  has_and_belongs_to_many :tags
+  # A category is needed in order to classify the illustration
+  belongs_to :category
 end

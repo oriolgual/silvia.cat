@@ -6,7 +6,7 @@ Silvia::Application.routes.draw do
   namespace :backend do
     root to: 'illustrations#index'
     resources :illustrations
-    resources :tags
+    resources :categories
     resources :videos
   end
 end

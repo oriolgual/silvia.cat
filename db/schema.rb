@@ -11,45 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110824194828) do
+ActiveRecord::Schema.define(:version => 20110823211416) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["name"], :name => "index_categories_on_name"
 
   create_table "illustrations", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image"
     t.text     "thumbnail_coordinates"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "illustrations_tags", :id => false, :force => true do |t|
-    t.integer "illustration_id"
-    t.integer "tag_id"
-  end
-
-  add_index "illustrations_tags", ["illustration_id"], :name => "index_illustrations_tags_on_illustration_id"
-  add_index "illustrations_tags", ["tag_id"], :name => "index_illustrations_tags_on_tag_id"
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tags", ["name"], :name => "index_tags_on_name"
-
-  create_table "tags_videos", :id => false, :force => true do |t|
-    t.integer "tag_id"
-    t.integer "video_id"
-  end
-
-  add_index "tags_videos", ["tag_id"], :name => "index_tags_videos_on_tag_id"
-  add_index "tags_videos", ["video_id"], :name => "index_tags_videos_on_video_id"
 
   create_table "videos", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "url"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

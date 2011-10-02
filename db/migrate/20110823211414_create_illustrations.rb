@@ -5,6 +5,7 @@ class CreateIllustrations < ActiveRecord::Migration
       t.text :description
       t.string :image
       t.text :thumbnail_coordinates
+      t.references :category
 
       t.timestamps
     end

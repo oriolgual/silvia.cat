@@ -1,3 +1,3 @@
-Given /^some tags exists$/ do
-  @current_tag = Tag.make!
+Given /^some categories exists$/ do
+  @current_category = Category.make!
 end

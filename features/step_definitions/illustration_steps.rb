@@ -9,7 +9,7 @@ When /^I fill the illustration form with all the necessary data$/ do
   fill_in 'Nom', with: 'Course of witches'
   fill_in 'Descripció', with: 'Personatge per un còmic'
   attach_file 'Imatge', Rails.root.join('spec/support/files/illustration.jpg')
-  select(@current_tag.name, from: 'Tags')
+  select(@current_category.name, from: 'Categoria')
   click_button 'Crear Il·lustració'
 end
 

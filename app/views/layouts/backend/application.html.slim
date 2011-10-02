@@ -15,7 +15,7 @@ html
             li= link_to "Settings", "#"
         #main-navigation
           ul.wat-cf
-            - %w(illustration tag video).each do |model|
+            - %w(illustration category video).each do |model|
               li=link_to I18n.t(model.classify.constantize.model_name.plural, scope: 'activerecord.models', default: model.classify.constantize.model_name.human.pluralize), send("backend_#{model.classify.constantize.model_name.plural}_path")
       #wrapper.wat-cf
         .flash

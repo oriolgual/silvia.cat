@@ -5,7 +5,7 @@ Feature: Add illustrations
 
   Background:
     Given I am logged in at the backend
-    And some tags exists
+    And some categories exists
 
   Scenario: Add a new illustration
     Given I am add the illustrations create page

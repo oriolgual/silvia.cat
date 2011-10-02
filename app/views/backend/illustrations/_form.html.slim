@@ -12,7 +12,7 @@
       #thumb_container
         = image_tag resource.image.url, id: 'thumb'
 
-  = f.association :tags, collection: Tag.all
+  = f.association :category, collection: Category.all
   = f.submit
 
 javascript:

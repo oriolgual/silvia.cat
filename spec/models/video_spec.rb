@@ -1,5 +1,5 @@
 require 'fast_spec_helper'
-require_model 'tag'
+require_model 'category'
 require_model 'video'
 
 describe Video do
@@ -20,17 +20,17 @@ describe Video do
       subject.errors[:url].wont_be_empty
     end
 
-    it 'is not valid without tags' do
-      subject.tags = []
+    it 'is not valid without a category' do
+      subject.category = nil
 
       subject.valid?.must_equal false
-      subject.errors[:tags].wont_be_empty
+      subject.errors[:category].wont_be_empty
     end
   end
 
   describe 'relations' do
-    it 'has and belongs to many tags' do
-      %w(tag_ids tag_ids= tags tags=).each do |method|
+    it 'belongs to a category' do
+      %w(category_id category_id=).each do |method|
         subject.must_respond_to(method)
       end
     end

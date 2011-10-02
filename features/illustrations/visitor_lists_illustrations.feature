@@ -28,8 +28,8 @@ Feature: Visitor views illustrations
     When I click the pagination link to view more illustrations
     Then I should see new illustrations
 
-  Scenario: Visitor views tagged illustrations
-    Given some illustration are tagged with fanart
+  Scenario: Visitor views categorized illustrations
+    Given some illustration are categorized with fanart
     And I am on the homepage
     When I click on the fanart link
     Then I should only see fanart illustrations

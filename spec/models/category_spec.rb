@@ -1,9 +1,9 @@
 require 'fast_spec_helper'
-require_model 'tag'
+require_model 'category'
 
-describe Tag do
+describe Category do
 
-  subject { Tag.new }
+  subject { Category.new }
 
   describe 'validations' do
     it 'is not valid without a name' do
@@ -15,7 +15,7 @@ describe Tag do
   end
 
   describe 'relations' do
-    it 'has and belongs to many illustration' do
+    it 'has many illustrations' do
       %w(illustration_ids illustration_ids= illustrations illustrations=).each do |method|
         subject.must_respond_to(method)
       end

@@ -4,5 +4,5 @@ dl
     dd= resource.public_send(attr)
   dt= resource_class.human_attribute_name(:image)
   dd= image_tag resource.image.thumbnail.url, id: 'thumb'
-  dt= resource_class.human_attribute_name(:tags)
-  dd= resource.tags.map(&:name).join(', ')
+  dt= resource_class.human_attribute_name(:category)
+  dd= resource.category

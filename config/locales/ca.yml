@@ -3,11 +3,14 @@ ca:
     models:
       illustration: "Il·lustració"
       illustrations: "Il·lustracions"
+      category: Categoria
+      categories: Categories
     attributes:
       illustration:
         name: Nom
         description: Descripció
         image: Imatge
+        category: Categoria
   flash:
     actions:
       create:

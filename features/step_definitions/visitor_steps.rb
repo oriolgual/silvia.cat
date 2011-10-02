@@ -49,7 +49,7 @@ Then /^I should see new illustrations$/ do
   pending # express the regexp above with the code you wish you had
 end
 
-Given /^some illustration are tagged with fanart$/ do
+Given /^some illustration are categorized with fanart$/ do
   pending # express the regexp above with the code you wish you had
 end
 
