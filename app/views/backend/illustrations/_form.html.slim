@@ -7,7 +7,7 @@
     = f.hidden_field :image_cache
     - if resource.image?
       = f.hidden_field :thumbnail_coordinates
-      = image_tag(resource.image_url, id: 'image') if resource.image?
+      = image_tag(resource.image.url, id: 'image') if resource.image?
 
       #thumb_container
         = image_tag resource.image.url, id: 'thumb'

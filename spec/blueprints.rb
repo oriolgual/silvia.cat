@@ -8,6 +8,7 @@ require_model 'video'
 
 Illustration.blueprint do
   name { "Illustration #{sn}" }
+  description { "A nice illustration."}
   image { File.open(rails_root + '/support/files/illustration.jpg') }
   tags { [Tag.make] }
 end

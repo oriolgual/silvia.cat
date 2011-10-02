@@ -1,0 +1,9 @@
+#content_large_image
+  .vertical_large_img
+    =image_tag(illustration.image_url, alt: illustration.name, height: '480')
+    #thumbcaption
+      .title_thumbcaption
+        =illustration.name
+        .txt_thumbcaption
+          =illustration.description
+

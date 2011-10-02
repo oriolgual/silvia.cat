@@ -7,15 +7,14 @@ Feature: Visitor views illustrations
     Given some illustrations exists
 
   Scenario: Visitor views illustrations at the home page
-    When I am on the homepage
+    Given I am on the homepage
     Then I should see the illustrations
     And I should see the expanded view of the newest illustration
 
-  @javascript
   Scenario: Visitor view a bigger illustration clicking at a thumbnail
     Given I am on the homepage
     When I click on the first thumbnail
-    Then I should a bigger picture of the illustration
+    Then I should see a bigger picture of the illustration
     And I should see the illustration data
 
   @javascript

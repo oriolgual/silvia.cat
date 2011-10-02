@@ -1,5 +1,8 @@
 Silvia::Application.routes.draw do
-  root to: 'home#index'
+  root to: 'illustrations#index'
+
+  resources :illustrations, only: [:index, :show]
+
   namespace :backend do
     root to: 'illustrations#index'
     resources :illustrations

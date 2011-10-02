@@ -16,6 +16,12 @@ require Rails.root.join('spec/blueprints')
 
 ActionController::Base.allow_rescue = false
 
+if(ENV['FAILFAST'])
+  After do |s|
+    Cucumber.wants_to_quit = true if s.failed?
+  end
+end
+
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError

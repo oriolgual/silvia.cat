@@ -66,4 +66,10 @@ module Thumbnailer
   def thumbnail!
     image.recreate_versions! if thumbnail_coordinates_changed?
   end
+
+  # A helper that returns the thumbnail version url
+  #
+  def thumb_url
+    image.url(:thumbnail)
+  end
 end

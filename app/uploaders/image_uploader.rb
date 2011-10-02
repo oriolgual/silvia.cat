@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
   version :thumbnail do
     process :crop
-    process resize_to_fill:  [100, 100]
+    process resize_to_fill:  [95, 95]
   end
 
   # Tell ImageMagick to crop the image with the model coordinates

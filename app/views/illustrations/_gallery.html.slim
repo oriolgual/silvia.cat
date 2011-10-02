@@ -1,0 +1,14 @@
+#gallery_content
+  #content_thumbnail
+    ul
+      -illustrations.each do |illustration|
+        li.thumbnail
+          =link_to illustration, {title: illustration.name} do
+            =image_tag(illustration.thumb_url, alt: illustration.name, size: '95x95')
+
+  #pages_link
+    .gallery_link
+      p <
+    .gallery_link
+      p >
+

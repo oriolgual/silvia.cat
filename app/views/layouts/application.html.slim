@@ -1,21 +1,19 @@
 doctype 5
 html
   head
-    title Rails Template
+    title Silvia Brujas
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
   body
     #container
-      header#header
-        h1 Rails template
-      section#content
-        -if !(@flash_messages = flash_messages).blank?
-          #flash-messages
-            = @flash_messages
+
+      #sidebar
+        == render partial: 'layouts/sidebar'
+
+      #content
+        #header
+          == render partial: 'layouts/header'
+        #header_submenu
+          == render partial: 'layouts/header_submenu'
         = yield
-      aside#sidebar
-        =yield(:sidebar)
-      footer#footer
-        p
-          | Footer content
