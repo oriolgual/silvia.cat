@@ -8,7 +8,7 @@ end
 
 Then /^I should see the illustrations$/ do
   @illustrations.each do |illustration|
-    page.has_xpath?("//img[@alt='#{illustration.name}']").must_equal true
+    must_see_illustration(illustration)
   end
 end
 
@@ -66,4 +66,8 @@ def must_see_illustration_data(illustration)
     page.has_content?(illustration.name).must_equal true
     page.has_content?(illustration.description).must_equal true
   end
+end
+
+def must_see_illustration(illustration)
+  page.has_xpath?("//img[@alt='#{illustration.name}']").must_equal true
 end

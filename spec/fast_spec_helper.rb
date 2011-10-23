@@ -5,10 +5,7 @@ require 'minitest/autorun'
 def setup_active_record
   require 'active_record'
   unless ActiveRecord::Base.connected?
-    ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-    silence_stream(STDOUT) do
-      require_relative '../db/schema.rb'
-    end
+    ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/test.sqlite')
   end
 end
 

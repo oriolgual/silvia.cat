@@ -4,4 +4,10 @@ class Category < ActiveRecord::Base
 
   has_many :illustrations
   has_many :videos
+
+  # A simple scope to just return active categories
+  #
+  def self.active
+    where(active: true)
+  end
 end
