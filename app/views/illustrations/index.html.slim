@@ -1,2 +1,2 @@
 = render 'gallery', illustrations: @illustrations
-= render @illustrations.last
+= render @illustrations.last if @illustrations.any?
