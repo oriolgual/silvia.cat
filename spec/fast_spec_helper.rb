@@ -12,6 +12,7 @@ end
 def require_model(file)
   setup_active_record
   require_relative "../app/models/#{file}"
+  require_blueprint(file)
 end
 
 def require_uploader(file)
@@ -28,8 +29,8 @@ def require_carrierwave
   require 'carrierwave/orm/activerecord'
 end
 
-def require_blueprints
-  require_relative 'blueprints'
+def require_blueprint(file)
+  require_relative "blueprints/#{file}"
 end
 
 def require_foo

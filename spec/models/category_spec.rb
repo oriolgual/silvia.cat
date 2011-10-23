@@ -1,6 +1,5 @@
 require 'fast_spec_helper'
 require_model 'category'
-require_blueprints
 
 describe Category do
 

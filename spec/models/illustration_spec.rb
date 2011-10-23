@@ -3,7 +3,6 @@ require_uploader 'image_uploader'
 require_service 'thumbnailer'
 require_model 'illustration'
 require_model 'category'
-require_blueprints
 
 describe Illustration do
   subject { Illustration.new }
