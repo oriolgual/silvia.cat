@@ -1,23 +1,26 @@
 Given /^I am on contact page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit new_contact_path
 end
 
 When /^I fill in the contact form and submit it$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'Name', with: 'Mr. Boogedy'
+  fill_in 'Email', with: 'mr@boogedy.com'
+  fill_in 'Message', with: 'I need to clean my public image, would you make a cute design for me?'
+  click_button 'Send'
 end
 
 Then /^I should see a message telling me that the contact request has been sent$/ do
-  pending # express the regexp above with the code you wish you had
+  must_have_confirmation_message('Thank you for contacting me! You will be receiving an answer soon')
 end
 
 Then /^Silvia should receive an email with the contact form information$/ do
-  pending # express the regexp above with the code you wish you had
+  check_email_with_subject('Contact form from silvia.cat')
 end
 
 When /^I click contact link$/ do
-  pending # express the regexp above with the code you wish you had
+  click_link 'Contacte'
 end
 
 Then /^I should be at the contact page$/ do
-  pending # express the regexp above with the code you wish you had
+  must_be_on(new_contact_path)
 end

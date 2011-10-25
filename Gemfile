@@ -25,6 +25,7 @@ gem 'jcrop-rails'
 gem 'high_voltage'
 gem 'foreman'
 gem 'unicorn'
+gem 'mail_form'
 
 group :development do
   gem 'rack-webconsole'

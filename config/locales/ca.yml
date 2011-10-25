@@ -22,3 +22,7 @@ ca:
       destroy:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
+  helpers:
+    submit:
+      contact_form:
+        create: 'Send'
