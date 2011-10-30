@@ -1,0 +1,40 @@
+#gallery_content
+  +column(6, true)
+  height: 440px
+  #content_thumbnail
+    height: 430px
+    ul
+      margin-left: -15px
+      .thumbnail
+        +column(2.5)
+        margin-right: 0px
+        margin-bottom: 15px
+        margin-left: 15px
+        height: 90px
+
+#content_large_image
+  margin-top: 18px
+  width: 630px
+  +column(14, true)
+  .vertical_large_img
+    width: 650px
+    height: 480px //ALÇADA MAXIMA DE LES IMGS EN VERTICAL//
+    margin-right: 0px
+
+#thumbcaption
+  +column(14, true)
+  width: 250px
+  height: 100px
+  background: #EEEEEE
+  float: right
+  margin-bottom: 20px
+  .title_thumbcaption
+    font-weight: bold
+    padding-left: 15px
+    height: 20px
+    padding-top: 4px
+    border-bottom: 4px solid white
+    .txt_thumbcaption
+      margin-top: 20px
+      font-size: 12px
+      font-weight: normal
