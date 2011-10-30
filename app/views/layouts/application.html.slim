@@ -8,12 +8,12 @@ html
   body
     #container
 
-      #sidebar
+      aside#sidebar
         == render partial: 'layouts/sidebar'
 
-      #content
-        #header
+      section#content
+        header#header
           == render partial: 'layouts/header'
-        #header_submenu
+        nav#header_submenu
           == render partial: 'layouts/header_submenu'
         = yield
