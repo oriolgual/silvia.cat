@@ -24,7 +24,8 @@ Feature: Visitor views illustrations
     Then I should see a high-res illustration picture
 
   Scenario: Visitor views more illustrations using the pagination
-    Given I am on the homepage
+    Given there are even more illustrations
+    And I am on the homepage
     When I click the pagination link to view more illustrations
     Then I should see new illustrations
 

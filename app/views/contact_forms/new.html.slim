@@ -1,4 +1,8 @@
 #contact
+  - if flash[:notice]
+    .flash
+      p.notice=flash[:notice]
+
   section#contact-form
     =simple_form_for @contact_form, url: contact_path, validate: true do |f|
       =f.input :name

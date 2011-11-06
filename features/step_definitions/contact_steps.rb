@@ -14,11 +14,11 @@ Then /^I should see a message telling me that the contact request has been sent$
 end
 
 Then /^Silvia should receive an email with the contact form information$/ do
-  check_email_with_subject('Contact form from silvia.cat')
+  check_email_with_subject(email: 'silvia@silvia.cat', subject: 'Contact form from silvia.cat')
 end
 
 When /^I click contact link$/ do
-  click_link 'Contacte'
+  click_link 'contacte'
 end
 
 Then /^I should be at the contact page$/ do

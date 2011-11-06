@@ -26,3 +26,8 @@ ca:
     submit:
       contact_form:
         create: 'Send'
+  views:
+    pagination:
+      previous: "<"
+      next: ">"
+      truncate: "..."

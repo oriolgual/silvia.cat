@@ -3,6 +3,8 @@
 class Illustration < ActiveRecord::Base
   include Thumbnailer
 
+  default_scope order('created_at')
+
   validates :name, :category, presence: true
 
   # A category is needed in order to classify the illustration
