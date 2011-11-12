@@ -1,12 +1,14 @@
+#encoding: utf-8
+
 Given /^I am on contact page$/ do
   visit new_contact_path
 end
 
 When /^I fill in the contact form and submit it$/ do
-  fill_in 'Name', with: 'Mr. Boogedy'
-  fill_in 'Email', with: 'mr@boogedy.com'
-  fill_in 'Message', with: 'I need to clean my public image, would you make a cute design for me?'
-  click_button 'Send'
+  fill_in 'Nom', with: 'Mr. Boogedy'
+  fill_in 'Correu electrònic', with: 'mr@boogedy.com'
+  fill_in 'Missatge', with: 'I need to clean my public image, would you make a cute design for me?'
+  click_button 'Enviar'
 end
 
 Then /^I should see a message telling me that the contact request has been sent$/ do

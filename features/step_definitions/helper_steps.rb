@@ -22,10 +22,10 @@ end
 
 def must_have_message(type, message = nil)
   if message
-    within("div.flash .#{type}") do
+    within("div.#{type}") do
       page.has_content?(message).must_equal true
     end
   else
-    page.has_css?("div.flash .#{type}").must_equal true
+    page.has_css?("div.#{type}").must_equal true
   end
 end

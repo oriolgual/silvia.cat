@@ -23,9 +23,14 @@ ca:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
   helpers:
+    label:
+      contact_form:
+        name: Nom
+        email: Correu electrònic
+        message: Missatge
     submit:
       contact_form:
-        create: 'Send'
+        create: 'Enviar'
   views:
     pagination:
       previous: "<"

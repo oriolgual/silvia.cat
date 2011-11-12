@@ -12,6 +12,5 @@ html
     section#content
       header#header
         == render partial: 'layouts/header'
-      nav#header_submenu
-        == render partial: 'layouts/header_submenu'
-      = yield
+      .content
+        = yield

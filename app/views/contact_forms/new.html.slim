@@ -1,11 +1,13 @@
 #contact
   - if flash[:notice]
-    .flash
-      p.notice=flash[:notice]
+    .alert-message.success.notice
+      p=flash[:notice]
 
   section#contact-form
-    =simple_form_for @contact_form, url: contact_path, validate: true do |f|
-      =f.input :name
-      =f.input :email, as: :email
-      =f.input :message, as: :text
-      =f.submit
+    = twitter_bootstrap_form_for @contact_form, url: contact_path, validate: true do |f|
+      =f.inputs 'Contacte' do
+        =f.text_field :name
+        =f.email_field :email, placeholder: 'email@example.org'
+        =f.text_area :message, class: 'xxlarge'
+      =f.actions do
+        =f.submit class: 'btn'
