@@ -13,6 +13,7 @@ end
 gem 'inherited_resources'
 gem 'responders'
 gem "jquery-rails"
+gem "formalize-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
