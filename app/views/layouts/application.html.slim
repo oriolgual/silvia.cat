@@ -6,14 +6,12 @@ html
     = javascript_include_tag :application
     = csrf_meta_tags
   body
-    #container
+    aside#sidebar
+      == render partial: 'layouts/sidebar'
 
-      #sidebar
-        == render partial: 'layouts/sidebar'
-
-      #content
-        #header
-          == render partial: 'layouts/header'
-        #header_submenu
-          == render partial: 'layouts/header_submenu'
-        = yield
+    section#content
+      header#header
+        == render partial: 'layouts/header'
+      nav#header_submenu
+        == render partial: 'layouts/header_submenu'
+      = yield
