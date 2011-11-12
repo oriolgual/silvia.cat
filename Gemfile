@@ -23,6 +23,7 @@ gem 'high_voltage'
 gem 'foreman'
 gem 'unicorn'
 gem 'mail_form'
+gem 'simple_form'
 gem 'twitter_bootstrap_form_for'
 gem 'css-bootstrap-rails'
 
