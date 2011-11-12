@@ -10,22 +10,20 @@ group :assets do
   gem "uglifier"
 end
 
-gem 'simple_form'
 gem 'inherited_resources'
-gem 'flash_messages_helper'
 gem 'responders'
-gem 'button_form'
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
-gem 'formalize-rails'
 gem 'jcrop-rails'
 gem 'high_voltage'
 gem 'foreman'
 gem 'unicorn'
 gem 'mail_form'
+gem 'twitter_bootstrap_form_for'
+gem 'css-bootstrap-rails'
 
 group :development do
   gem 'rack-webconsole'
