@@ -1,7 +1,9 @@
-#gallery_content
-  +column(6, true)
+#gallery
+  width: 225px
   height: 440px
-  #content_thumbnail
+  float: left
+  margin-right: 15px
+  #thumbnails
     height: 430px
     ul
       margin: 0
@@ -13,29 +15,25 @@
         margin-left: 0px
         height: 90px
 
-#content_large_image
-  margin-top: 18px
-  width: 630px
-  +column(14, true)
-  .vertical_large_img
-    width: 650px
-    height: 480px //ALÇADA MAXIMA DE LES IMGS EN VERTICAL//
-    margin-right: 0px
+#work
+  width: 380px
+  float: left
+  margin-right: 15px
 
-#thumbcaption
-  +column(14, true)
+#work_information
   width: 250px
   height: 100px
   background: #EEEEEE
   float: right
   margin-bottom: 20px
-  .title_thumbcaption
+  .title
     font-weight: bold
     padding-left: 15px
     height: 20px
     padding-top: 4px
     border-bottom: 4px solid white
-    .txt_thumbcaption
-      margin-top: 20px
-      font-size: 12px
-      font-weight: normal
+  .description
+    margin-top: 20px
+    padding-left: 15px
+    font-size: 12px
+    font-weight: normal
