@@ -28,15 +28,18 @@ Then /^I should see the illustration data$/ do
 end
 
 Given /^I have clicked on an illustration thumbnail$/ do
-  pending # express the regexp above with the code you wish you had
+  @current_illustration = @illustrations.first
+  visit illustration_path(@current_illustration)
 end
 
 When /^I click at the illustration bigger picture$/ do
-  pending # express the regexp above with the code you wish you had
+  within 'div.vertical_large_img' do
+    click_link @current_illustration.name
+  end
 end
 
 Then /^I should see a high\-res illustration picture$/ do
-  pending # express the regexp above with the code you wish you had
+  page.has_css?('img#fancybox-img').must_equal true
 end
 
 Given /^there are even more illustrations$/ do

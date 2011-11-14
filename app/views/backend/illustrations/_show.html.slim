@@ -1,8 +1,8 @@
 dl
-  - (attributes - %w(image thumbnail_coordinates)).each do |attr|
+  - (attributes - %w(image thumbnail_coordinates category_id)).each do |attr|
     dt= resource_class.human_attribute_name(attr)
     dd= resource.public_send(attr)
   dt= resource_class.human_attribute_name(:image)
   dd= image_tag resource.image.thumbnail.url, id: 'thumb'
   dt= resource_class.human_attribute_name(:category)
-  dd= resource.category
+  dd= link_to resource.category.name, backend_category_path(resource.category)
