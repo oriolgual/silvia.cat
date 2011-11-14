@@ -33,7 +33,7 @@ Given /^I have clicked on an illustration thumbnail$/ do
 end
 
 When /^I click at the illustration bigger picture$/ do
-  within 'div.vertical_large_img' do
+  within '#work' do
     click_link @current_illustration.name
   end
 end
@@ -70,7 +70,7 @@ Then /^I should only see fanart illustrations$/ do
 end
 
 def must_see_illustration_data(illustration)
-  within '#content_large_image' do
+  within '#work_information' do
     page.has_content?(illustration.name).must_equal true
     page.has_content?(illustration.description).must_equal true
   end
