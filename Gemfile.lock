@@ -76,6 +76,8 @@ GEM
     erubis (2.7.0)
     execjs (1.2.8)
       multi_json (~> 1.0)
+    fancybox-rails (0.1.4)
+      railties (>= 3.1.0)
     ffi (1.0.9)
     foreman (0.22.0)
       term-ansicolor (~> 1.0.5)
@@ -240,6 +242,7 @@ DEPENDENCIES
   css-bootstrap-rails
   cucumber-rails
   database_cleaner
+  fancybox-rails
   foreman
   formalize-rails
   growl
