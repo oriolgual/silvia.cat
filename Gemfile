@@ -26,6 +26,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'twitter_bootstrap_form_for'
 gem 'css-bootstrap-rails'
+gem 'fancybox-rails'
 
 group :development do
   gem 'rack-webconsole'
