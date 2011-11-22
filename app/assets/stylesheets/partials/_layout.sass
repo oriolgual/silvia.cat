@@ -1,4 +1,7 @@
+@import "compass/css3/transition"
 $sidebar-width: 170px
+$silvia-color: #741519
+$menu-color: #666666
 
 #sidebar
   position: fixed
@@ -12,12 +15,30 @@ $sidebar-width: 170px
 
   #header
     ul.menu
-      height: 30px
       +horizontal-list
-      background: image-url("button_menu.png")
+      padding: 10px 0px
+      border: 1px solid #D5D5D5
+      border-right: none
+      border-left: none
+      line-height: 14px
+      font-size: 14px
+      text-transform: uppercase
       li
         margin-left: 20px
-        padding-top: 9px
         margin-right: 7px
+        a
+          color: $menu-color
+          text-decoration: none
+          +transition-property(color)
+          +transition-duration(0.4s)
+          &:hover, &.selected
+            color: lighten($menu-color, 40%)
+          &:hover
+            +transition-property(color)
+            +transition-duration(0.4s)
+          &.selected
+            color: $silvia-color
+          &:hover
+            color: $silvia-color
   .content
     padding: 15px
