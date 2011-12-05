@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Main version, restrict the height to 480px
   #
   version :main do
-    process resize_to_limit: [380, 480]
+    process resize_to_limit: ['', 480]
   end
 
   # Thumbnail version. Crop the image with the model coordinates and then
