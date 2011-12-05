@@ -8,7 +8,9 @@
 -%>
 <%= paginator.render do -%>
   <nav class="pagination">
-    <%= prev_page_tag unless current_page.first? %>
-    <%= next_page_tag unless current_page.last? %>
+    <ul>
+      <%= prev_page_tag %>
+      <%= next_page_tag %>
+    </ul>
   </nav>
 <% end -%>

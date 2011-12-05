@@ -33,6 +33,6 @@ ca:
         create: 'Enviar'
   views:
     pagination:
-      previous: "<"
-      next: ">"
+      previous: "&larr; Anterior"
+      next: "Següent &rarr;"
       truncate: "..."
