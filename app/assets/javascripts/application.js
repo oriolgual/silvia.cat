@@ -5,3 +5,8 @@
 $(document).ready(function() {
   $("#work a").fancybox();
 });
+
+$('#slideshow').cycle({
+  fx: 'fade',
+  timeout: 1000
+});
