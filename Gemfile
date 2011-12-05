@@ -27,6 +27,7 @@ gem 'simple_form'
 gem 'twitter_bootstrap_form_for'
 gem 'css-bootstrap-rails'
 gem 'fancybox-rails'
+gem 'friendly_id', '~> 4.0.0.beta14'
 
 group :development do
   gem 'rack-webconsole'
