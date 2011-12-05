@@ -1,8 +1,6 @@
 #work
   =link_to illustration.image.url do
     =image_tag(illustration.image.main.url, alt: illustration.name)
-#work_information
-  .title
-    =illustration.name
-  .description
-    =illustration.description
+    .info
+      span.title=illustration.name
+      span.description=illustration.description

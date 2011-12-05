@@ -1,7 +1,8 @@
+@import "compass/css3/transition"
+@import "compass/css3/opacity"
 #gallery
   width: 225px
   height: 440px
-  float: left
   margin-right: 15px
   #thumbnails
     height: 430px
@@ -16,24 +17,39 @@
         height: 90px
 
 #work
-  width: 380px
-  float: left
-  margin-right: 15px
-
-#work_information
-  width: 250px
-  height: 100px
-  background: #EEEEEE
-  float: right
-  margin-bottom: 20px
-  .title
-    font-weight: bold
-    padding-left: 15px
-    height: 20px
-    padding-top: 4px
-    border-bottom: 4px solid white
-  .description
-    margin-top: 20px
-    padding-left: 15px
-    font-size: 12px
-    font-weight: normal
+  position: absolute
+  left: 430px
+  top: 61px
+  padding-right: 15px
+  min-height: 500px
+  a
+    display: block
+    overflow: hidden
+    position: relative
+    text-decoration: none
+    font-family: Helvetica, Arial, sans-serif
+    font-size: 14px
+    &:hover
+      .info
+        +transition(all, 0.2s)
+        bottom: 0px
+        +opacity(1)
+    .info
+      +transition(all, 0.5s)
+      bottom: -46px
+      +opacity(0)
+      position: absolute
+      left: 0px
+      right: 0px
+      height: 46px
+      padding: 10px 10px 0px 10px
+      color: #fff
+      background: rgba(0,0,0,0.7)
+      span
+        display: block
+      .title
+        font-weight: bold
+      .description
+    img
+      max-width: 100%
+      height: auto

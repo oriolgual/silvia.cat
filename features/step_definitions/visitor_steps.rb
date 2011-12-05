@@ -70,7 +70,7 @@ Then /^I should only see fanart illustrations$/ do
 end
 
 def must_see_illustration_data(illustration)
-  within '#work_information' do
+  within '#work' do
     page.has_content?(illustration.name).must_equal true
     page.has_content?(illustration.description).must_equal true
   end

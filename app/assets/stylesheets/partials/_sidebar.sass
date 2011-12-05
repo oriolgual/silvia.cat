@@ -5,17 +5,29 @@
     margin-left: 15px
     width: 150px
     background-repeat: no-repeat
-  .links
+  ul li
     +horizontal-list
     margin-bottom: 10px
     padding: 9px
     line-height: 14px
     font-size: 14px
-    border: 1px dotted #D5D5D5
+    border: 1px solid #D5D5D5
     border-right: none
     border-left: none
     a
+      color: $menu-color
       text-decoration: none
+      +transition-property(color)
+      +transition-duration(0.4s)
+      &:hover, &.selected
+        color: lighten($menu-color, 40%)
+      &:hover
+        +transition-property(color)
+        +transition-duration(0.4s)
+      &.selected
+        color: $silvia-color
+      &:hover
+        color: $silvia-color
   h1
     span
       display: none
