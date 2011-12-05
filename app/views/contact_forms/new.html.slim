@@ -4,7 +4,7 @@
       p=flash[:notice]
 
   section#contact-form
-    = twitter_bootstrap_form_for @contact_form, url: contact_path, validate: true do |f|
+    = twitter_bootstrap_form_for @contact_form, url: contact_path, validate: false do |f|
       =f.inputs 'Contacte' do
         =f.text_field :name
         =f.email_field :email, placeholder: 'email@example.org'

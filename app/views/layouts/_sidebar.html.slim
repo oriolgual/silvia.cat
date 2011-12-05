@@ -2,8 +2,17 @@ h1.logo
   =link_to root_path do
     span Silvia brujas
 nav#menu_right
-  ul
+  ul#secondary_menu
    li=link_to 'qui sóc?', page_path('about')
    li=link_to 'contacte', new_contact_path
-   li.mail=mail_to 'silvia@silvia.cat'
    li.phone 668 860 931
+  ul#social
+    li.twitter=link_to 'http://twitter.com/silviabrujas', title: '@silviabrujas' do
+      span @silviabrujas
+    end
+    li.deviantart=link_to 'http://silviabrujas.deviantart.com', title: "Silvia Brujas's at DeviantArt" do
+      span Silvia Brujas's at DeviantArt
+    end
+    li.email=link_to 'mailto:silvia@silvia.cat', title: 'e-mail: silvia at silvia.cat' do
+      span 'silvia at silvia.cat'
+    end
