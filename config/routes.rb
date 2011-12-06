@@ -1,8 +1,11 @@
 Silvia::Application.routes.draw do
-  root to: 'illustrations#index'
 
-  resources :illustrations, only: [:index, :show]
-  resources :categories, only: [:show]
+  resources :illustrations, only: [:index, :show] do
+    get 'page/:page', action: :index, on: :collection
+  end
+  resources :categories, only: [:show] do
+    get ':id/page/:page', action: :show, on: :collection
+  end
 
   resource :contact_form, as: :contact, only: [:new, :create]
 
@@ -12,4 +15,6 @@ Silvia::Application.routes.draw do
     resources :categories
     resources :videos
   end
+
+  root to: 'illustrations#index'
 end

@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
   actions :show
 
   def show
-    @illustrations = Illustration.by_category(resource).page(1)
+    page = params[:page] || 1
+    @illustrations = Illustration.by_category(resource).page(page)
     show!
   end
 end
