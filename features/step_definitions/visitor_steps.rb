@@ -1,3 +1,4 @@
+# encoding: utf-8
 Given /^some illustrations exists$/ do
   @illustrations = Illustration.make!(8)
 end
@@ -47,7 +48,7 @@ Given /^there are even more illustrations$/ do
 end
 
 When /^I click the pagination link to view more illustrations$/ do
-  click_link '>'
+  click_link 'Següent'
 end
 
 Then /^I should see new illustrations$/ do
