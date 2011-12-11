@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '~> 3.1.3'
 gem 'pg'
 
 gem "slim"
 
 group :assets do
-  gem 'sass-rails', '~> 3.1.0'
-  gem 'compass', '~> 0.12.alpha'
-  gem "uglifier"
+  gem 'compass', git: 'https://github.com/chriseppstein/compass.git', branch: 'master'
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
 gem 'inherited_resources'
