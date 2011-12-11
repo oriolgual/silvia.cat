@@ -142,6 +142,7 @@ GEM
     mocha (0.10.0)
       metaclass (~> 0.0.1)
     multi_json (1.0.4)
+    newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     pg (0.12.0)
       rake-compiler (~> 0.7)
@@ -274,6 +275,7 @@ DEPENDENCIES
   mini_magick
   minitest
   mocha
+  newrelic_rpm
   pg
   pry
   rack-webconsole

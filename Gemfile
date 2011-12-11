@@ -57,3 +57,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry'
 end
+
+group :production do
+  gem 'newrelic_rpm'
+end
