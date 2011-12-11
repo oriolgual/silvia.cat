@@ -37,30 +37,6 @@ ActiveRecord::Schema.define(:version => 20111206190441) do
 
   add_index "illustrations", ["slug"], :name => "index_illustrations_on_slug", :unique => true
 
-  create_table "illustrations_tags", :id => false, :force => true do |t|
-    t.integer "illustration_id"
-    t.integer "tag_id"
-  end
-
-  add_index "illustrations_tags", ["illustration_id"], :name => "index_illustrations_tags_on_illustration_id"
-  add_index "illustrations_tags", ["tag_id"], :name => "index_illustrations_tags_on_tag_id"
-
-  create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tags", ["name"], :name => "index_tags_on_name"
-
-  create_table "tags_videos", :id => false, :force => true do |t|
-    t.integer "tag_id"
-    t.integer "video_id"
-  end
-
-  add_index "tags_videos", ["tag_id"], :name => "index_tags_videos_on_tag_id"
-  add_index "tags_videos", ["video_id"], :name => "index_tags_videos_on_video_id"
-
   create_table "videos", :force => true do |t|
     t.string   "name"
     t.text     "description"
