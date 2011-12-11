@@ -12,6 +12,11 @@ class Illustration < ActiveRecord::Base
   # A category is needed in order to classify the illustration
   belongs_to :category
 
+  # A scope to get illustration that belong to a category
+  #
+  # category - The Category that illustration shoudl belong to
+  #
+  # Returns a collection of illustrations
   def self.by_category(category)
     where(category_id: category)
   end
