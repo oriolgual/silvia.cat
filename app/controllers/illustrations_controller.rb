@@ -4,4 +4,5 @@ class IllustrationsController < ApplicationController
   inherit_resources
   actions :index, :show
   has_scope :page, default: 1
+  belongs_to :category, optional: true
 end
