@@ -1,10 +1,7 @@
 Silvia::Application.routes.draw do
 
   resources :illustrations, only: [:index, :show] do
-    get 'page/:page', action: :index, on: :collection
-  end
-  resources :categories, only: [:show] do
-    get ':id/page/:page', action: :show, on: :collection
+    get '(/category/:category_id)(/page/:page)', action: :index, on: :collection
   end
 
   resource :contact_form, as: :contact, only: [:new, :create]
