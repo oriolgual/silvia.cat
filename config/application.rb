@@ -53,5 +53,6 @@ module Silvia
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.manifest = Rails.root.join('app/assets')
   end
 end
