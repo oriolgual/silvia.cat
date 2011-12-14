@@ -15,6 +15,7 @@ gem 'inherited_resources'
 gem 'responders'
 gem "jquery-rails"
 gem "formalize-rails"
+gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
