@@ -4,6 +4,9 @@ def rails_root
   File.expand_path(File.dirname(__FILE__))
 end
 
+Category.destroy_all
+Illustration.destroy_all
+
 ["Els tresors d'Asgard", "Encàrrecs", "Fanart", "Galeria de dissenys", "Il·lustracions", "Naturales", "Retrats"].each do |name|
   Category.create!(name: name, active: true)
 end
