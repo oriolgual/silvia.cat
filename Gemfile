@@ -18,7 +18,6 @@ gem "formalize-rails"
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'jcrop-rails'
 gem 'high_voltage'
@@ -30,6 +29,7 @@ gem 'twitter_bootstrap_form_for'
 gem 'css-bootstrap-rails'
 gem 'fancybox-rails'
 gem 'friendly_id', '~> 4.0.0.beta14'
+gem 'simple-navigation'
 
 group :development do
   gem 'rack-webconsole'

@@ -127,10 +127,8 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.6.1)
+    json (1.6.4)
     json_pure (1.6.1)
-    kaminari (0.12.4)
-      rails (>= 3.0.0)
     kgio (2.6.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
@@ -195,7 +193,7 @@ GEM
     rake-compiler (0.7.9)
       rake
     rb-fsevent (0.4.3.1)
-    rdoc (3.11)
+    rdoc (3.12)
       json (~> 1.4)
     responders (0.6.4)
     rest-client (1.6.7)
@@ -217,6 +215,8 @@ GEM
       json_pure
       rubyzip
     sexp_processor (3.0.7)
+    simple-navigation (3.6.0)
+      activesupport (>= 2.3.2)
     simple_form (1.5.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -282,7 +282,6 @@ DEPENDENCIES
   inherited_resources
   jcrop-rails
   jquery-rails
-  kaminari
   launchy
   machinist (>= 2.0.0.beta1)
   mail_form
@@ -297,6 +296,7 @@ DEPENDENCIES
   rb-fsevent
   responders
   sass-rails (~> 3.1.0)
+  simple-navigation
   simple_form
   simplecov
   slim
