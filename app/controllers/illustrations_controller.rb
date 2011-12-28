@@ -3,6 +3,15 @@
 class IllustrationsController < ApplicationController
   inherit_resources
   actions :index, :show
-  has_scope :page, default: 1
   belongs_to :category, optional: true
+  layout :select_layout
+
+  private
+  def select_layout
+    if request.headers['X-PJAX']
+      false
+    else
+      'application'
+    end
+  end
 end
