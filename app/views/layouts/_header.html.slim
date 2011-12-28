@@ -1,3 +1,1 @@
-ul.menu
-  -Category.active.each do |category|
-    li=link_to category.name, url_for(controller: 'illustrations', action: 'index', category_id: category), {class: current_page?(category_id: category) ? 'selected' : nil}
+= render_navigation

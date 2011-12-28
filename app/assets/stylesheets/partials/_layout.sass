@@ -13,7 +13,12 @@ $menu-color: #666666
     left: $sidebar-width
   padding: 10px
 
-  ul.menu
+  .content
+    padding: 15px
+    overflow: hidden
+
+header
+  ul
     +horizontal-list
     padding: 10px 0px
     border: 1px solid #D5D5D5
@@ -40,9 +45,6 @@ $menu-color: #666666
           color: $silvia-color
         &:hover
           color: $silvia-color
-  .content
-    padding: 15px
-    overflow: hidden
 
 #footer
   clear: both
