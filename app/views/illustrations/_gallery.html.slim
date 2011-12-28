@@ -1,7 +1,15 @@
-#gallery
-  #thumbnails
-    ul
-      -illustrations.each do |illustration|
-        li.thumbnail
-          =link_to illustration, {title: illustration.name} do
-            =image_tag(illustration.thumb_url, alt: illustration.name, size: '95x95')
+section#gallery
+  nav#works
+    -illustrations.each_slice(elements_per_slice) do |illustrations_slice|
+      ul
+        -illustrations_slice.each do |illustration|
+          li
+            =link_to illustration, {title: illustration.name} do
+              =image_tag(illustration.thumb_url, alt: illustration.name, size: '95x95')
+
+nav.pagination
+  ul
+    li.prev
+      a=raw(t('views.pagination.previous'))
+    li.next
+      a=raw(t('views.pagination.next'))

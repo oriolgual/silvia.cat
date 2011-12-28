@@ -1,15 +1,24 @@
 @import "compass/css3/transition"
 @import "compass/css3/opacity"
 #gallery
+  position: relative
+  overflow: hidden
+
   width: 225px
-  height: 440px
+  height: 420px
+
   margin-right: 15px
-  #thumbnails
-    height: 430px
+  nav#works
+    position: absolute
+    height: 420px
+    width: 20000em
     ul
       margin: 0
       padding: 0
-      .thumbnail
+      height: 420px
+      width: 225px
+      float: left
+      li
         +column(2.5)
         margin-right: 15px
         margin-bottom: 15px

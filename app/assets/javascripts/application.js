@@ -4,12 +4,14 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $("section#gallery").scrollable({vertical: false});
+
   $("#work a").live('click', function(ev) {
     ev.preventDefault();
     $(this).fancybox().click();
   });
 
-  $('#gallery li a').pjax('#main');
+  $('#gallery li a').pjax('#work', {fragment: '.work_wrapper'});
 
   $('#slideshow').cycle({
     fx: 'fade',

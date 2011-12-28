@@ -1,9 +1,13 @@
-.pagination
-  margin-top: 36px auto 0px auto
+nav.pagination
   ul
     padding-left: 0px
-  a
-    padding: 0px 20px
-    &:hover
-      background-color: transparent
-      color: $silvia-color
+  li
+    a
+      padding: 0px 20px
+      cursor: pointer
+      &:hover
+        background-color: transparent
+        color: $silvia-color
+    &.disabled
+      a
+        cursor: text
