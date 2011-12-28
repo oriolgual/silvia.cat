@@ -1,2 +1,2 @@
-= render 'gallery', illustrations: Illustration.page(1)
+= render 'gallery', illustrations: @illustrations if @illustrations
 = render @illustration
