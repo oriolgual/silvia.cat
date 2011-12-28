@@ -129,6 +129,8 @@ GEM
       thor (~> 0.14)
     json (1.6.4)
     json_pure (1.6.1)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     kgio (2.6.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
@@ -282,6 +284,7 @@ DEPENDENCIES
   inherited_resources
   jcrop-rails
   jquery-rails
+  kaminari
   launchy
   machinist (>= 2.0.0.beta1)
   mail_form

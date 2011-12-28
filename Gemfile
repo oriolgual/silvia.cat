@@ -30,6 +30,7 @@ gem 'css-bootstrap-rails'
 gem 'fancybox-rails'
 gem 'friendly_id', '~> 4.0.0.beta14'
 gem 'simple-navigation'
+gem 'kaminari'
 
 group :development do
   gem 'rack-webconsole'
