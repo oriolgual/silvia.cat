@@ -11,6 +11,6 @@ html
 
     section#content
       header#header
-        == render partial: 'layouts/header'
-      #main.content
+        nav =render_navigation
+      section#main.content
         = yield

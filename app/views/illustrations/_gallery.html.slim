@@ -1,11 +1,6 @@
-section#gallery
+aside#gallery
   nav#works
-    -illustrations.each_slice(elements_per_slice) do |illustrations_slice|
-      ul
-        -illustrations_slice.each do |illustration|
-          li
-            =link_to illustration, {title: illustration.name} do
-              =image_tag(illustration.thumb_url, alt: illustration.name, size: '95x95')
+    ==work_gallery(illustrations)
 
 nav.pagination
   ul

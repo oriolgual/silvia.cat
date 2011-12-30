@@ -72,4 +72,12 @@ module Thumbnailer
   def thumb_url
     image.url(:thumbnail)
   end
+
+  def image_url
+    image.url
+  end
+
+  def fancybox_url
+    image.url(:main)
+  end
 end

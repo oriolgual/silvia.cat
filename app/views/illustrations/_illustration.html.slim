@@ -1,14 +1,3 @@
-section#work
-  .work_wrapper title=illustration.name
-    =link_to illustration.image.url, {title: illustration.name} do
-      =image_tag(illustration.image.main.url, alt: illustration.name)
-      .info
-        span.title=illustration.name
-        span.description=illustration.description
-
--if @illustrations
-  javascript:
-    $(function() {
-      var scrollable = $("section#gallery").data('scrollable');
-      scrollable.seekTo(#{@illustrations.index(illustration)/elements_per_slice}, 0);
-    });
+article#work
+  == work(illustration)
+  == scrollable_seek_to_current_page(@illustrations, illustration)

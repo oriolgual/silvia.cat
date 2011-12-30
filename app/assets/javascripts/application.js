@@ -3,8 +3,11 @@
 //= require fancybox
 //= require_tree .
 
+var scrollable = null;
+
 $(document).ready(function() {
-  $("section#gallery").scrollable({vertical: false});
+  $("#gallery").scrollable({vertical: false});
+  scrollable = $("#gallery").data('scrollable');
 
   $("#work a").live('click', function(ev) {
     ev.preventDefault();
