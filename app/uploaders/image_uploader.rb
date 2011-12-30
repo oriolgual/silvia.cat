@@ -3,8 +3,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  storage :file
-
   # Main version, restrict the height to 480px
   #
   version :main do
