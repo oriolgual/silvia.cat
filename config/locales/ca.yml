@@ -11,6 +11,9 @@ ca:
         description: Descripció
         image: Imatge
         category: Categoria
+      category:
+        name: Nom
+        active: Activa
   flash:
     actions:
       create:
