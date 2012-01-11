@@ -16,30 +16,14 @@
   = f.submit
 
 javascript:
-  $(function(){
-
-    $('#image').Jcrop({
-      onChange: showPreview,
-      onSelect: showPreview,
-      aspectRatio: 1
-    });
-  });
-
-
+  var jcrop_api;
   function showPreview(coords)
   {
     var image = $('#image');
     var thumb_container = $('#thumb_container');
-    var thumb_input = $('#illustration_thumbnail_coordinates')
 
     var rx = thumb_container.width() / coords.w;
     var ry = thumb_container.height() / coords.h;
-
-    var json = JSON.stringify(coords);
-
-    if (thumb_input.length > 0) {
-      thumb_input[0].value = json;
-    }
 
     $('#thumb').css({
       width: Math.round(rx * image.width()) + 'px',
@@ -49,9 +33,34 @@ javascript:
     });
   };
 
--unless resource.thumbnail_coordinates.blank?
+  function update_form(coords) {
+    var json = JSON.stringify(coords);
+    var thumb_input = $('#illustration_thumbnail_coordinates')
+
+    if (thumb_input.length > 0) {
+      thumb_input[0].value = json;
+    }
+    showPreview(coords);
+  }
+
+-if resource.thumbnail_coordinates.blank?
   javascript:
     $(function(){
-      var coords = #{resource.thumbnail_coordinates.to_json.html_safe};
-      showPreview(coords);
+      $('#image').Jcrop({
+        onChange: update_form,
+        onSelect: update_form,
+        aspectRatio: 1
+      });
+    });
+-else
+  javascript:
+    $(function(){
+      $('#image').Jcrop({
+        onChange: update_form,
+        onSelect: update_form,
+        aspectRatio: 1
+      },function(){
+        this.setSelect([#{select_current_coordinates(resource.thumbnail_coordinates)}]);
+        showPreview(#{resource.thumbnail_coordinates.to_json.html_safe});
+      });
     });
