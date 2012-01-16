@@ -1,6 +1,7 @@
 require_relative '../fast_spec_helper'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
+require 'friendly_id'
 require_model 'illustration'
 require_model 'category'
 
@@ -24,6 +25,20 @@ describe Illustration do
 
       subject.valid?.must_equal false
       subject.errors[:category].wont_be_empty
+    end
+  end
+
+  describe 'delegations' do
+    it 'delegates the category name to the category' do
+      subject.category = Category.new(name: 'Artwork')
+
+      subject.category_name.must_equal 'Artwork'
+    end
+
+    it 'allows delegation with nil categories' do
+      subject.category = nil
+
+      subject.category_name.must_equal nil
     end
   end
 

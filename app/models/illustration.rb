@@ -9,6 +9,8 @@ class Illustration < ActiveRecord::Base
 
   validates :name, :category, presence: true
 
+  delegate :name, to: :category, prefix: true, allow_nil: true
+
   # A category is needed in order to classify the illustration
   belongs_to :category
 

@@ -13,7 +13,7 @@
             tr id=resource class=odd_or_even
               - %w(name description).each do |attr|
                 td= resource.public_send(attr).to_s.truncate(20)
-              td=resource.category.name
+              td=resource.category_name
               td=image_tag(resource.thumb_url, alt: resource.name, size: '95x95')
               td
                 = link_to 'Veure', resource_path(resource)
