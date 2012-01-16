@@ -37,9 +37,7 @@ javascript:
     var json = JSON.stringify(coords);
     var thumb_input = $('#illustration_thumbnail_coordinates')
 
-    if (thumb_input.length > 0) {
-      thumb_input[0].value = json;
-    }
+    thumb_input[0].value = json;
     showPreview(coords);
   }
 
