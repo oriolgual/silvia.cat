@@ -4,8 +4,8 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
   validates :name, presence: true
 
-  has_many :illustrations
-  has_many :videos
+  has_many :illustrations, dependent: :nullify
+  has_many :videos, dependent: :nullify
 
   # A simple scope to just return active categories
   #

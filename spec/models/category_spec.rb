@@ -1,5 +1,9 @@
 require 'fast_spec_helper'
+require 'friendly_id'
 require_model 'category'
+require_uploader 'image_uploader'
+require_service 'thumbnailer'
+require_model 'illustration'
 
 describe Category do
 
@@ -19,6 +23,16 @@ describe Category do
       %w(illustration_ids illustration_ids= illustrations illustrations=).each do |method|
         subject.must_respond_to(method)
       end
+    end
+
+    it 'nullifies its children when deleted' do
+      subject = Category.make!
+      child = Illustration.make!(category: subject)
+
+      subject.destroy
+
+      child.reload
+      child.category_id.must_equal nil
     end
   end
 
