@@ -34,6 +34,7 @@ module Silvia
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ca
+    config.i18n.fallbacks = true
 
     # Please note that JavaScript expansions are *ignored altogether* if the asset
     # pipeline is enabled (see config.assets.enabled below). Put your defaults in
