@@ -7,6 +7,8 @@ class Category < ActiveRecord::Base
   has_many :illustrations, dependent: :nullify
   has_many :videos, dependent: :nullify
 
+  translates :name
+
   # A simple scope to just return active categories
   #
   def self.active

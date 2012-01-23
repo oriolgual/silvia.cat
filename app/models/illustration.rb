@@ -14,6 +14,8 @@ class Illustration < ActiveRecord::Base
   # A category is needed in order to classify the illustration
   belongs_to :category
 
+  translates :name, :description
+
   # A scope to get illustration that belong to a category
   #
   # category - The Category that illustration shoudl belong to
