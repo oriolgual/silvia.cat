@@ -6,13 +6,25 @@ ca:
       category: Categoria
       categories: Categories
     attributes:
+      video:
+        name: Nom
+        name_ca: Nom (català)
+        name_es: Nom (castellà)
+        description_ca: Descripció (català)
+        description_es: Descripció (castellà)
+        category: Categoria
       illustration:
         name: Nom
-        description: Descripció
+        name_ca: Nom (català)
+        name_es: Nom (castellà)
+        description_ca: Descripció (català)
+        description_es: Descripció (castellà)
         image: Imatge
         category: Categoria
       category:
         name: Nom
+        name_ca: Nom (català)
+        name_es: Nom (castellà)
         active: Activa
   flash:
     actions:
