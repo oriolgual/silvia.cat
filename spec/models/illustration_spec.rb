@@ -1,9 +1,11 @@
-require_relative '../fast_spec_helper'
+require 'fast_spec_helper'
+require 'friendly_id'
+require 'globalize3'
+require_concern 'globalize_extensions'
+require_model 'category'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
-require 'friendly_id'
 require_model 'illustration'
-require_model 'category'
 
 describe Illustration do
   subject { Illustration.new }
@@ -66,6 +68,18 @@ describe Illustration do
 
         Illustration.by_category(category).wont_include illustration
       end
+    end
+  end
+
+  describe 'translations' do
+    it 'translaters setters in catalan' do
+      subject.respond_to?(:name_ca=).must_equal true
+      subject.respond_to?(:description_ca=).must_equal true
+    end
+
+    it 'translaters setters in spanish' do
+      subject.respond_to?(:name_es=).must_equal true
+      subject.respond_to?(:description_es=).must_equal true
     end
   end
 end

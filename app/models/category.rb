@@ -1,6 +1,8 @@
 # Categories are used to classify Illustrations and Videos
 class Category < ActiveRecord::Base
   extend FriendlyId
+  include GlobalizeExtensions
+
   friendly_id :name, use: :slugged
   validates :name, presence: true
 
@@ -8,6 +10,7 @@ class Category < ActiveRecord::Base
   has_many :videos, dependent: :nullify
 
   translates :name
+  translate_accessors_in :ca, :es
 
   # A simple scope to just return active categories
   #

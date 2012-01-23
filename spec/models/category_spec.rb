@@ -1,9 +1,12 @@
 require 'fast_spec_helper'
 require 'friendly_id'
+require 'globalize3'
+require_concern 'globalize_extensions'
 require_model 'category'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
 require_model 'illustration'
+require_model 'video'
 
 describe Category do
 
@@ -15,6 +18,16 @@ describe Category do
 
       subject.valid?.must_equal false
       subject.errors[:name].wont_be_empty
+    end
+  end
+
+  describe 'translations' do
+    it 'translaters setters in catalan' do
+      subject.respond_to?(:name_ca=).must_equal true
+    end
+
+    it 'translaters setters in spanish' do
+      subject.respond_to?(:name_es=).must_equal true
     end
   end
 

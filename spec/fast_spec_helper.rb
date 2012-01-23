@@ -24,6 +24,10 @@ def require_service(file)
   require_relative "../app/services/#{file}"
 end
 
+def require_concern(file)
+  require_relative "../app/models/concerns/#{file}"
+end
+
 def require_carrierwave
   require 'carrierwave'
   require 'carrierwave/orm/activerecord'
