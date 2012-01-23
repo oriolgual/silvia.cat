@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111206190441) do
+ActiveRecord::Schema.define(:version => 20120123122809) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,27 @@ ActiveRecord::Schema.define(:version => 20111206190441) do
 
   add_index "categories", ["name"], :name => "index_categories_on_name"
   add_index "categories", ["slug"], :name => "index_categories_on_slug"
+
+  create_table "category_translations", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
+
+  create_table "illustration_translations", :force => true do |t|
+    t.integer  "illustration_id"
+    t.string   "locale"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "illustration_translations", ["illustration_id"], :name => "index_b0c98806d31be981f03b71bdd325c9417e68cd00"
 
   create_table "illustrations", :force => true do |t|
     t.string   "name"
@@ -36,6 +57,17 @@ ActiveRecord::Schema.define(:version => 20111206190441) do
   end
 
   add_index "illustrations", ["slug"], :name => "index_illustrations_on_slug", :unique => true
+
+  create_table "video_translations", :force => true do |t|
+    t.integer  "video_id"
+    t.string   "locale"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "video_translations", ["video_id"], :name => "index_video_translations_on_video_id"
 
   create_table "videos", :force => true do |t|
     t.string   "name"
