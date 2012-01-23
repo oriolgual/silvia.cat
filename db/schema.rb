@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123122809) do
+ActiveRecord::Schema.define(:version => 20120123190025) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
-    t.string   "slug"
+    t.string   "slug_ca"
+    t.string   "slug_es"
   end
 
-  add_index "categories", ["name"], :name => "index_categories_on_name"
-  add_index "categories", ["slug"], :name => "index_categories_on_slug"
+  add_index "categories", ["slug_ca"], :name => "index_categories_on_slug"
+  add_index "categories", ["slug_es"], :name => "index_categories_on_slug_es"
 
   create_table "category_translations", :force => true do |t|
     t.integer  "category_id"
@@ -46,17 +46,17 @@ ActiveRecord::Schema.define(:version => 20120123122809) do
   add_index "illustration_translations", ["illustration_id"], :name => "index_b0c98806d31be981f03b71bdd325c9417e68cd00"
 
   create_table "illustrations", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
     t.string   "image"
     t.text     "thumbnail_coordinates"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.string   "slug_ca"
+    t.string   "slug_es"
   end
 
-  add_index "illustrations", ["slug"], :name => "index_illustrations_on_slug", :unique => true
+  add_index "illustrations", ["slug_ca"], :name => "index_illustrations_on_slug", :unique => true
+  add_index "illustrations", ["slug_es"], :name => "index_illustrations_on_slug_es"
 
   create_table "video_translations", :force => true do |t|
     t.integer  "video_id"
@@ -70,12 +70,15 @@ ActiveRecord::Schema.define(:version => 20120123122809) do
   add_index "video_translations", ["video_id"], :name => "index_video_translations_on_video_id"
 
   create_table "videos", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
     t.string   "url"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug_ca"
+    t.string   "slug_es"
   end
+
+  add_index "videos", ["slug_ca"], :name => "index_videos_on_slug_ca"
+  add_index "videos", ["slug_es"], :name => "index_videos_on_slug_es"
 
 end

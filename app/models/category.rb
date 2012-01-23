@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   extend FriendlyId
   include GlobalizeExtensions
 
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: :simple_i18n
   validates :name, presence: true
 
   has_many :illustrations, dependent: :nullify

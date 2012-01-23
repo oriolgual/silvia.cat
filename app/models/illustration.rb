@@ -5,7 +5,7 @@ class Illustration < ActiveRecord::Base
   include GlobalizeExtensions
   extend FriendlyId
 
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: :simple_i18n
 
   default_scope order('created_at')
 
