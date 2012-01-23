@@ -31,6 +31,7 @@ gem 'fancybox-rails'
 gem 'friendly_id', '~> 4.0.0.beta14'
 gem 'simple-navigation'
 gem 'kaminari'
+gem 'globalize3'
 
 group :development do
   gem 'rack-webconsole'
