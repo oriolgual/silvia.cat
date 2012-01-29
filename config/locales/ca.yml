@@ -37,6 +37,10 @@ ca:
       destroy:
         notice: '%{resource_name} was successfully destroyed.'
         alert: '%{resource_name} could not be destroyed.'
+  contact_forms:
+    new:
+      title: 'Contacte'
+    thank_you: 'Gràcies per posar-te en contacte amb mi. Aviat rebràs una resposta!'
   helpers:
     label:
       contact_form:
@@ -46,6 +50,10 @@ ca:
     submit:
       contact_form:
         create: 'Enviar'
+  navigation:
+    sidebar:
+      about: 'qui sóc?'
+      contact: 'contacte'
   views:
     pagination:
       previous: "&larr; Anterior"

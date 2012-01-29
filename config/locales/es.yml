@@ -1,0 +1,24 @@
+es:
+  contact_forms:
+    new:
+      title: 'Contacto'
+    thank_you: 'Gracias por ponerte en contacto conmigo. ¡Pronto recibirás una respuesta!'
+  helpers:
+    label:
+      contact_form:
+        name: Nombre
+        email: Correo electrónico
+        message: Mensaje
+    submit:
+      contact_form:
+        create: 'Enviar'
+  navigation:
+    sidebar:
+      about: '¿quién soy?'
+      contact: 'contacto'
+  views:
+    pagination:
+      previous: "&larr; Anterior"
+      next: "Siguiente &rarr;"
+      truncate: "..."
+
