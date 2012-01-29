@@ -11,10 +11,26 @@ class Category < ActiveRecord::Base
 
   translates :name
   translate_accessors_in :ca, :es
+  before_save :set_friendly_id
 
   # A simple scope to just return active categories
   #
   def self.active
     where(active: true)
+  end
+
+  # Never generate automatically a new slug because it has problems with
+  # multiple locales.
+  def should_generate_new_friendly_id?
+    false
+  end
+
+  # Set the slug in all available locales
+  def set_friendly_id(*args)
+    I18n.available_locales.each do |locale|
+      I18n.with_locale(locale) do
+        super(name, locale)
+      end
+    end
   end
 end
