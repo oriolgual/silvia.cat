@@ -43,18 +43,6 @@ Then /^I should see a high\-res illustration picture$/ do
   page.has_css?('img#fancybox-img').must_equal true
 end
 
-Given /^there are even more illustrations$/ do
-  @illustrations = @illustrations + Illustration.make!(10)
-end
-
-When /^I click the pagination link to view more illustrations$/ do
-  click_link 'Següent'
-end
-
-Then /^I should see new illustrations$/ do
-  must_see_illustration(@illustrations.last)
-end
-
 Given /^some illustration are categorized with fanart$/ do
   @fanart_illustration = Illustration.make!(category: Category.make(name: 'Fanart'))
 end
