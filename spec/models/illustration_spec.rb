@@ -1,9 +1,13 @@
-require_relative '../fast_spec_helper'
+require 'fast_spec_helper'
+require 'friendly_id'
+require 'globalize3'
+I18n.available_locales = [:ca, :es]
+I18n.locale = :ca
+require_concern 'globalize_extensions'
+require_model 'category'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
-require 'friendly_id'
 require_model 'illustration'
-require_model 'category'
 
 describe Illustration do
   subject { Illustration.new }
@@ -53,19 +57,47 @@ describe Illustration do
   describe 'scopes' do
     describe 'by_category' do
       it 'includes illustrations from a given category' do
-        category = Category.make!
-        illustration = Illustration.make!(category: category)
+        category = Category.make
+        category.save!
+        illustration = Illustration.make(category: category)
+        illustration.save!
 
         Illustration.by_category(category).must_include illustration
       end
 
       it 'does not include illustrations from a other categoris' do
-        category = Category.make!
-        another_category = Category.make!
-        illustration = Illustration.make!(category: another_category)
+        another_category = Category.make
+        another_category.save!
+        category = Category.make
+        category.save!
+        illustration = Illustration.make(category: another_category)
+        illustration.save!
 
         Illustration.by_category(category).wont_include illustration
       end
+    end
+  end
+
+  describe 'translations' do
+    it 'translaters setters in catalan' do
+      subject.respond_to?(:name_ca=).must_equal true
+      subject.respond_to?(:description_ca=).must_equal true
+    end
+
+    it 'translaters setters in spanish' do
+      subject.respond_to?(:name_es=).must_equal true
+      subject.respond_to?(:description_es=).must_equal true
+    end
+  end
+
+  describe 'set_friendly_id' do
+    it 'sets the slug in every available locale' do
+      illustration = Illustration.new(name_ca: 'catalan', name_es: 'spanish')
+
+      illustration.set_friendly_id
+
+      illustration.slug_ca.must_equal 'catalan'
+      illustration.slug_es.must_equal 'spanish'
     end
   end
 end

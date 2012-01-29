@@ -7,6 +7,12 @@ def setup_active_record
   unless ActiveRecord::Base.connected?
     ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/test.sqlite')
   end
+  setup_database_cleaner
+end
+
+def setup_database_cleaner
+  require 'database_cleaner'
+  require_relative 'database_cleaner_helper'
 end
 
 def require_model(file)
@@ -22,6 +28,14 @@ end
 
 def require_service(file)
   require_relative "../app/services/#{file}"
+end
+
+def require_lib(file)
+  require_relative "../lib/#{file}"
+end
+
+def require_concern(file)
+  require_relative "../app/models/concerns/#{file}"
 end
 
 def require_carrierwave

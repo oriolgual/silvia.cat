@@ -1,0 +1,9 @@
+= simple_form_for [ :backend, resource ] do |f|
+  = f.input :name_ca, required: true
+  = f.input :name_es, required: true
+  = f.input :description_ca, as: :text
+  = f.input :description_es, as: :text
+  = f.input :url
+  = f.association :category, collection: Category.all
+  = f.submit
+

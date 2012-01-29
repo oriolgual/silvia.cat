@@ -1,6 +1,8 @@
 = simple_form_for [ :backend, resource ] do |f|
-  - (attributes - ['image', 'category_id', 'slug']).each do |attr|
-    = f.input attr
+  = f.input :name_ca, required: true
+  = f.input :name_es, required: true
+  = f.input :description_ca, as: :text
+  = f.input :description_es, as: :text
 
   #illustration
     = f.input :image

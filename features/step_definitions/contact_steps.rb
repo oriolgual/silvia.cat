@@ -12,7 +12,7 @@ When /^I fill in the contact form and submit it$/ do
 end
 
 Then /^I should see a message telling me that the contact request has been sent$/ do
-  must_have_confirmation_message('Thank you for contacting me! You will be receiving an answer soon')
+  must_have_confirmation_message('Gràcies per posar-te en contacte amb mi. Aviat rebràs una resposta!')
 end
 
 Then /^Silvia should receive an email with the contact form information$/ do

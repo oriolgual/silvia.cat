@@ -1,6 +1,6 @@
 .block
   .content
-    h2 New #{resource_class.model_name.human}
+    h2=resource_class.model_name.human
 
     .inner
       = render "form", attributes: attributes

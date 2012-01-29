@@ -4,6 +4,7 @@ end
 
 guard 'minitest', drb: false, rubygems: false, bundler: false, notify: false do
   watch(%r{app/(.+)/(.+)\.rb})                  { |m| "spec/#{m[1]}/#{m[2]}_spec.rb" }
+  watch(%r{lib/(.+)\.rb})                       { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch(%r{spec/(.+)/(.+)_spec\.rb})
   watch(%r{spec/spec_helper.rb})               { "test" }
 end

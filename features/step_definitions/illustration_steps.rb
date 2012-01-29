@@ -6,8 +6,10 @@ Given /^I am add the illustrations create page$/ do
 end
 
 When /^I fill the illustration form with all the necessary data$/ do
-  fill_in 'Nom', with: 'Course of witches'
-  fill_in 'Descripció', with: 'Personatge per un còmic'
+  fill_in 'Nom (català)', with: 'Course of witches'
+  fill_in 'Nom (castellà)', with: 'Course of witches castellà'
+  fill_in 'Descripció (català)', with: 'Personatge per un còmic'
+  fill_in 'Descripció (castellà)', with: 'Personatge per un còmic'
   attach_file 'Imatge', Rails.root.join('spec/support/files/illustration.jpg')
   select(@current_category.name, from: 'Categoria')
   click_button 'Crear Il·lustració'

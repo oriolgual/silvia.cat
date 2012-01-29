@@ -14,7 +14,7 @@
       height: 352px
       display: block
 
-  ul#sidebar_navigation li
+  ul#sidebar_navigation li, ul#language li
     +horizontal-list
     margin-bottom: 10px
     padding: 9px
@@ -38,8 +38,12 @@
       &:hover
         color: $silvia-color
 
+  ul#language
+    margin-top: 15px
+
   ul#social
     list-style-type: none
+    height: 30px
     li
       a
         float: left

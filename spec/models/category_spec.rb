@@ -1,9 +1,14 @@
 require 'fast_spec_helper'
 require 'friendly_id'
+require 'globalize3'
+I18n.available_locales = [:ca, :es]
+I18n.locale = :ca
+require_concern 'globalize_extensions'
 require_model 'category'
 require_uploader 'image_uploader'
 require_service 'thumbnailer'
 require_model 'illustration'
+require_model 'video'
 
 describe Category do
 
@@ -18,6 +23,16 @@ describe Category do
     end
   end
 
+  describe 'translations' do
+    it 'translaters setters in catalan' do
+      subject.respond_to?(:name_ca=).must_equal true
+    end
+
+    it 'translaters setters in spanish' do
+      subject.respond_to?(:name_es=).must_equal true
+    end
+  end
+
   describe 'relations' do
     it 'has many illustrations' do
       %w(illustration_ids illustration_ids= illustrations illustrations=).each do |method|
@@ -26,8 +41,10 @@ describe Category do
     end
 
     it 'nullifies its children when deleted' do
-      subject = Category.make!
-      child = Illustration.make!(category: subject)
+      subject = Category.make
+      subject.save!
+      child = Illustration.make(category: subject)
+      child.save!
 
       subject.destroy
 
@@ -39,13 +56,15 @@ describe Category do
   describe 'scopes' do
     describe 'active' do
       it 'includes active categories' do
-        @category = Category.make!(active: true)
+        @category = Category.make(active: true)
+        @category.save!
 
         Category.active.must_include @category
       end
 
       it 'does not include inactive categories' do
-        @category = Category.make!(active: false)
+        @category = Category.make(active: false)
+        @category.save!
 
         Category.active.wont_include @category
       end

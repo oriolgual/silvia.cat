@@ -8,7 +8,7 @@ Given /^I am on the homepage$/ do
 end
 
 Then /^I should see the illustrations$/ do
-  page.has_css?('li.thumbnail', count: @illustrations.length).must_equal true
+  page.has_css?('#gallery #works li', count: @illustrations.length).must_equal true
 end
 
 Then /^I should see the expanded view of the newest illustration$/ do
@@ -41,18 +41,6 @@ end
 
 Then /^I should see a high\-res illustration picture$/ do
   page.has_css?('img#fancybox-img').must_equal true
-end
-
-Given /^there are even more illustrations$/ do
-  @illustrations = @illustrations + Illustration.make!(5)
-end
-
-When /^I click the pagination link to view more illustrations$/ do
-  click_link 'Següent'
-end
-
-Then /^I should see new illustrations$/ do
-  must_see_illustration(@illustrations.last)
 end
 
 Given /^some illustration are categorized with fanart$/ do
