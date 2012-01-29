@@ -5,7 +5,7 @@ section#contact
 
   section#contact-form
     = twitter_bootstrap_form_for @contact_form, url: contact_path, validate: false do |f|
-      =f.inputs 'Contacte' do
+      =f.inputs t('.title') do
         =f.text_field :name
         =f.email_field :email, placeholder: 'email@example.org'
         =f.text_area :message, class: 'xxlarge'
