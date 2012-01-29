@@ -24,6 +24,10 @@ def require_service(file)
   require_relative "../app/services/#{file}"
 end
 
+def require_lib(file)
+  require_relative "../lib/#{file}"
+end
+
 def require_concern(file)
   require_relative "../app/models/concerns/#{file}"
 end
