@@ -1,5 +1,5 @@
 dl
-  - (attributes - %w(image thumbnail_coordinates category_id)).each do |attr|
+  - (attributes - %w(image thumbnail_coordinates category_id) + %w(name_ca name_es description_ca description_es)).each do |attr|
     dt= resource_class.human_attribute_name(attr)
     dd= resource.public_send(attr)
   dt= resource_class.human_attribute_name(:image)

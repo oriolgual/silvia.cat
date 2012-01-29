@@ -23,6 +23,7 @@ Feature: Visitor views illustrations
     When I click at the illustration bigger picture
     Then I should see a high-res illustration picture
 
+  @javascript
   Scenario: Visitor views more illustrations using the pagination
     Given there are even more illustrations
     And I am on the homepage

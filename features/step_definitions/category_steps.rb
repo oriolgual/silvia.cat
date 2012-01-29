@@ -7,7 +7,7 @@ Given /^some active categories exist$/ do
 end
 
 Then /^I should see these categories at the main menu$/ do
-  within '#header .menu' do
+  within '#header nav' do
     @categories.each do |category|
       page.has_link?(category.name).must_equal true
     end
@@ -19,7 +19,7 @@ Given /^some inactive categories exist$/ do
 end
 
 Then /^I should not see these categories$/ do
-  within '#header .menu' do
+  within '#header nav' do
     @categories.each do |category|
       page.has_link?(category.name).must_equal false
     end
