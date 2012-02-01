@@ -1,3 +1,9 @@
+class Category < ActiveRecord::Base
+end
+class Illustration < ActiveRecord::Base
+end
+class Video < ActiveRecord::Base
+end
 class CreateGlobalizeTables < ActiveRecord::Migration
   def up
     Category.create_translation_table!({
