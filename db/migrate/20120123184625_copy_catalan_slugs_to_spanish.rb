@@ -1,11 +1,11 @@
 class CopyCatalanSlugsToSpanish < ActiveRecord::Migration
   def up
     Illustration.find_each do |record|
-      record.set_friendly_id(record.slug_ca, :es)
+      record.update_attribute(:slug_es, record.slug_ca)
     end
 
     Category.find_each do |record|
-      record.set_friendly_id(record.slug_ca, :es)
+      record.update_attribute(:slug_es, record.slug_ca)
     end
   end
 

@@ -1,8 +1,14 @@
 class Category < ActiveRecord::Base
+  include GlobalizeExtensions
+  translates :name
 end
 class Illustration < ActiveRecord::Base
+  include GlobalizeExtensions
+  translates :name, :description
 end
 class Video < ActiveRecord::Base
+  include GlobalizeExtensions
+  translates :name, :description
 end
 class CreateGlobalizeTables < ActiveRecord::Migration
   def up
