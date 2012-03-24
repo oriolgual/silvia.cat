@@ -8,6 +8,14 @@
   height: 420px
 
   margin-right: 15px
+  &.videos
+    width: 285px
+
+    nav#works
+      ul
+        width: 285px
+        li
+          width: 120px
   nav#works
     position: absolute
     height: 420px
@@ -31,13 +39,18 @@
   top: 61px
   padding-right: 15px
   min-height: 500px
-  a
+
+  &.video
+    left: 490px
+
+  a, #ytvideo
     display: block
     overflow: hidden
     position: relative
     text-decoration: none
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     font-size: 14px
+
     &:hover
       .info
         +transition(all, 0.2s)

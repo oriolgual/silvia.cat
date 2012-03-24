@@ -1,0 +1,15 @@
+aside#gallery.videos
+  nav#works
+    ul
+      -@videos.each do |video|
+        li
+          a href=video.url data-title=video.name data-description=video.description
+
+article#work.video
+  #work_wrapper
+    #ytvideo
+
+javascript:
+  $(document).ready(function(){
+    $("#gallery #works ul").ytplaylist({addThumbs:true, autoPlay: false, playerWidth: 700, playerHeight: 500});
+  });

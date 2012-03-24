@@ -3,6 +3,7 @@ Silvia::Application.routes.draw do
   resources :illustrations, only: [:index, :show] do
     get '(/category/:category_id)(/page/:page)', action: :index, on: :collection
   end
+  resources :videos, only: :index
 
   resource :contact_form, as: :contact, only: [:new, :create]
 
