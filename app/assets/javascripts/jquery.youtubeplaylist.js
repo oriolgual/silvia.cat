@@ -64,7 +64,7 @@ jQuery.fn.ytplaylist = function(options) {
 			html += ' allowfullscreen></iframe>';
 			html += '<span class="info">';
       if (title != undefined) {
-        html += '<span class="info"><span class="title">' + title + '</span>';
+        html += '<span class="title">' + title + '</span>';
       }
       if (description != undefined) {
         html += '<span class="description">' + description + '</span>';
