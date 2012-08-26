@@ -5,6 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_id = 'language'
     primary.item 'ca', 'Català', request.path + '?locale=ca'
     primary.item 'es', 'Español', request.path + '?locale=es'
+    primary.item 'en', 'English', request.path + '?locale=en'
   end
 end
 

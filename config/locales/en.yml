@@ -1,5 +1,23 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  contact_forms:
+    new:
+      title: 'Contact'
+    thank_you: "Thank you for contacting me. I'll get back to you as soon as possible!"
+  helpers:
+    label:
+      contact_form:
+        name: Name
+        email: E-mail
+        message: Message
+    submit:
+      contact_form:
+        create: 'Send'
+  navigation:
+    sidebar:
+      about: 'who am I?'
+      contact: 'contact'
+  views:
+    pagination:
+      previous: "&larr; Previous"
+      next: "Next &rarr;"
+      truncate: "..."

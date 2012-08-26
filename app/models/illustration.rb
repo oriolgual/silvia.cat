@@ -16,7 +16,7 @@ class Illustration < ActiveRecord::Base
   belongs_to :category
 
   translates :name, :description
-  translate_accessors_in :ca, :es
+  translate_accessors_in :ca, :es, :en
   before_save :set_friendly_id
 
   # A scope to get illustration that belong to a category

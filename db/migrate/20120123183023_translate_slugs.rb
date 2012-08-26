@@ -15,10 +15,10 @@ class TranslateSlugs < ActiveRecord::Migration
   end
 
   def down
-    rename_column :illustrations, :slug_ca, :slug
+    rename_column :illustrations, :slug_ca
     remove_column :illustrations, :slug_es
 
-    rename_column :categories, :slug_ca, :slug
+    rename_column :categories, :slug_ca
     remove_column :categories, :slug_es
 
     remove_column :videos, :slug_ca

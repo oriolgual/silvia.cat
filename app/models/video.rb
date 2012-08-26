@@ -5,5 +5,5 @@ class Video < ActiveRecord::Base
   validates :name, :url,  presence: true
 
   translates :name, :description
-  translate_accessors_in :ca, :es
+  translate_accessors_in :ca, :es, :en
 end

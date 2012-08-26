@@ -10,7 +10,7 @@ class Category < ActiveRecord::Base
   has_many :videos, dependent: :nullify
 
   translates :name
-  translate_accessors_in :ca, :es
+  translate_accessors_in :ca, :es, :en
   before_save :set_friendly_id
 
   # A simple scope to just return active categories

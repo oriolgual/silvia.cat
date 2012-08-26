@@ -10,21 +10,26 @@ ca:
         name: Nom
         name_ca: Nom (català)
         name_es: Nom (castellà)
+        name_en: Nom (anglès)
         description_ca: Descripció (català)
         description_es: Descripció (castellà)
+        description_en: Descripció (anglès)
         category: Categoria
       illustration:
         name: Nom
         name_ca: Nom (català)
         name_es: Nom (castellà)
+        name_en: Nom (anglès)
         description_ca: Descripció (català)
         description_es: Descripció (castellà)
+        description_en: Descripció (anglès)
         image: Imatge
         category: Categoria
       category:
         name: Nom
         name_ca: Nom (català)
         name_es: Nom (castellà)
+        name_en: Nom (anglès)
         active: Activa
   flash:
     actions:
