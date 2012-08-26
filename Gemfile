@@ -49,7 +49,6 @@ group :test do
   gem 'machinist'
   gem 'launchy'
   gem 'growl'
-  gem 'rb-fsevent'
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-minitest'

@@ -195,7 +195,6 @@ GEM
     rake (0.9.2.2)
     rake-compiler (0.7.9)
       rake
-    rb-fsevent (0.4.3.1)
     rdoc (3.12)
       json (~> 1.4)
     responders (0.6.4)
@@ -298,7 +297,6 @@ DEPENDENCIES
   pry
   rack-webconsole
   rails (~> 3.1.0)
-  rb-fsevent
   responders
   sass-rails (~> 3.1.0)
   simple-navigation
