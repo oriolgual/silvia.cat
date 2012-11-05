@@ -7,7 +7,6 @@ class Category < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :illustrations, dependent: :nullify
-  has_many :videos, dependent: :nullify
 
   translates :name
   translate_accessors_in :ca, :es, :en
