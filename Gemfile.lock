@@ -112,11 +112,6 @@ GEM
       guard (~> 0.4)
     guard-shell (0.1.1)
       guard (>= 0.2.0)
-    heroku (2.8.4)
-      launchy (>= 0.3.2)
-      rest-client (~> 1.6.1)
-      rubyzip
-      term-ansicolor (~> 1.0.5)
     high_voltage (1.0.1)
     hike (1.2.1)
     i18n (0.6.0)
@@ -198,8 +193,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     responders (0.6.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     ruby-hmac (0.4.0)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
@@ -280,7 +273,6 @@ DEPENDENCIES
   guard-minitest
   guard-shell
   has_scope!
-  heroku
   high_voltage
   inherited_resources
   jcrop-rails

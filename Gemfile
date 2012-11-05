@@ -35,7 +35,6 @@ gem 'globalize3'
 
 group :development do
   gem 'rack-webconsole'
-  gem 'heroku'
 end
 
 group :test do
