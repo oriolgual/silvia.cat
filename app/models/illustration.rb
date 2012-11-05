@@ -6,7 +6,7 @@ class Illustration < ActiveRecord::Base
 
   friendly_id :name, use: :simple_i18n
 
-  default_scope order('created_at')
+  default_scope order('created_at desc')
 
   validates :name, :category, presence: true
 
@@ -18,6 +18,10 @@ class Illustration < ActiveRecord::Base
   translates :name, :description
   translate_accessors_in :ca, :es, :en
   before_save :set_friendly_id
+
+  def self.featured
+    where(featured: true)
+  end
 
   # A scope to get illustration that belong to a category
   #

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826090104) do
+ActiveRecord::Schema.define(:version => 20121105182007) do
 
   create_table "categories", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "active"
-    t.string   "slug_ca"
-    t.string   "slug_es"
-    t.string   "slug_en"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "active"
+    t.string    "slug_ca"
+    t.string    "slug_es"
+    t.string    "slug_en"
   end
 
   add_index "categories", ["slug_ca"], :name => "index_categories_on_slug"
@@ -27,35 +27,36 @@ ActiveRecord::Schema.define(:version => 20120826090104) do
   add_index "categories", ["slug_es"], :name => "index_categories_on_slug_es"
 
   create_table "category_translations", :force => true do |t|
-    t.integer  "category_id"
-    t.string   "locale"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "category_id"
+    t.string    "locale"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
 
   create_table "illustration_translations", :force => true do |t|
-    t.integer  "illustration_id"
-    t.string   "locale"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "illustration_id"
+    t.string    "locale"
+    t.string    "name"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "illustration_translations", ["illustration_id"], :name => "index_b0c98806d31be981f03b71bdd325c9417e68cd00"
 
   create_table "illustrations", :force => true do |t|
-    t.string   "image"
-    t.text     "thumbnail_coordinates"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug_ca"
-    t.string   "slug_es"
-    t.string   "slug_en"
+    t.string    "image"
+    t.text      "thumbnail_coordinates"
+    t.integer   "category_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "slug_ca"
+    t.string    "slug_es"
+    t.string    "slug_en"
+    t.boolean   "featured",              :default => false
   end
 
   add_index "illustrations", ["slug_ca"], :name => "index_illustrations_on_slug", :unique => true
@@ -63,23 +64,23 @@ ActiveRecord::Schema.define(:version => 20120826090104) do
   add_index "illustrations", ["slug_es"], :name => "index_illustrations_on_slug_es"
 
   create_table "video_translations", :force => true do |t|
-    t.integer  "video_id"
-    t.string   "locale"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "video_id"
+    t.string    "locale"
+    t.string    "name"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "video_translations", ["video_id"], :name => "index_video_translations_on_video_id"
 
   create_table "videos", :force => true do |t|
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug_ca"
-    t.string   "slug_es"
-    t.string   "slug_en"
+    t.string    "url"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "slug_ca"
+    t.string    "slug_es"
+    t.string    "slug_en"
   end
 
   add_index "videos", ["slug_ca"], :name => "index_videos_on_slug_ca"

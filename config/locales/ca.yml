@@ -25,6 +25,7 @@ ca:
         description_en: Descripció (anglès)
         image: Imatge
         category: Categoria
+        featured: Surt a la portada
       category:
         name: Nom
         name_ca: Nom (català)

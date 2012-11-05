@@ -8,6 +8,11 @@ class IllustrationsController < ApplicationController
   layout :select_layout
   helper_method :elements_per_slice
 
+  def index
+    @illustrations = Illustration.featured unless params[:category_id]
+    index!
+  end
+
   def show
     @illustrations = Illustration.all unless pjax_request?
     show!
