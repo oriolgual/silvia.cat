@@ -11,8 +11,6 @@ $(document).ready(function() {
     $(this).fancybox().click();
   });
 
-  $('#sidebar li a').pjax('#content');
-
   $('#slideshow').cycle({
     fx: 'fade',
     timeout: 1000
