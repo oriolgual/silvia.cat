@@ -12,14 +12,4 @@ class IllustrationsController < ApplicationController
     @illustrations = Illustration.featured unless params[:category_id]
     index!
   end
-
-  def show
-    @illustrations = Illustration.all unless pjax_request?
-    show!
-  end
-
-  private
-  def elements_per_slice
-    8
-  end
 end

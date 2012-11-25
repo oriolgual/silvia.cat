@@ -1,51 +1,14 @@
 @import "compass/css3/transition"
 @import "compass/css3/opacity"
-#gallery
+
+.work
   position: relative
-  overflow: hidden
+  width: 330px
+  margin: 5px
+  float: left
 
-  width: 225px
-  height: 420px
-
-  margin-right: 15px
-  &.videos
-    width: 285px
-
-    nav#works
-      ul
-        width: 285px
-        li
-          width: 120px
-  nav#works
-    position: absolute
-    height: 420px
-    width: 20000em
-    ul
-      margin: 0
-      padding: 0
-      height: 420px
-      width: 225px
-      float: left
-      li
-        +column(2.5)
-        margin-right: 15px
-        margin-bottom: 15px
-        margin-left: 0px
-        height: 90px
-
-#work
-  position: absolute
-  left: 430px
-  top: 61px
-  padding-right: 15px
-  min-height: 500px
-
-  &.video
-    left: 490px
-
-  a, #ytvideo
-    display: block
-    overflow: hidden
+  a
+    display: inline-block
     position: relative
     text-decoration: none
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -54,7 +17,7 @@
     &:hover
       .info
         +transition(all, 0.2s)
-        bottom: 0px
+        bottom: 6px
         +opacity(1)
     .info
       +transition(all, 0.5s)
@@ -72,11 +35,12 @@
       .title
         font-weight: bold
       .description
-    img
-      max-width: 100%
-      height: auto
-  #ytvideo
-    overflow: visible
-    &:hover
-      .info
-        bottom: -46px
+
+.video
+  width: 680px
+  height: 383px
+  margin-bottom: 10px
+
+  iframe
+    width: 100%
+    height: 100%

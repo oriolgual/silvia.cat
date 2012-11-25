@@ -1,15 +1,4 @@
-aside#gallery.videos
-  nav#works
-    ul
-      -@videos.each do |video|
-        li
-          a href=video.url data-title=video.name data-description=video.description
-
-article#work.video
-  #work_wrapper
-    #ytvideo
-
-javascript:
-  $(document).ready(function(){
-    $("#gallery #works ul").ytplaylist({addThumbs:true, autoPlay: false, playerWidth: 700, playerHeight: 500});
-  });
+#works.videos
+  -@videos.each do |video|
+    article.video
+      iframe src="http://www.youtube.com/embed/#{video.youtube_id}?hd=true&showinfo=0&rel=0&modestbranding=1&fs=1" frameborder="0" allowfullscreen="true"

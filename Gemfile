@@ -9,6 +9,7 @@ group :assets do
   gem 'sass-rails', '~> 3.1.0'
   gem 'compass', '~> 0.12.alpha'
   gem "uglifier"
+  gem 'masonry-rails'
 end
 
 gem 'inherited_resources'
@@ -30,7 +31,6 @@ gem 'css-bootstrap-rails'
 gem 'fancybox-rails'
 gem 'friendly_id'
 gem 'simple-navigation'
-gem 'kaminari'
 gem 'globalize3'
 
 group :development do

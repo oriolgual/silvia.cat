@@ -1,5 +1,5 @@
 @import "compass/css3/transition"
-$sidebar-width: 170px
+$sidebar-width: 250px
 $silvia-color: #741519
 $menu-color: #666666
 
@@ -7,15 +7,19 @@ $menu-color: #666666
   position: absolute
   top: 0px
   left: 0px
+  padding: 25px 0px 0px 25px
+  width: $sidebar-width
+  height: 100%
+  box-sizing: border-box
 
 #content
   margin: 0px
     left: $sidebar-width
-  padding: 10px
+  padding-top: 25px
 
-  .content
-    padding: 15px
-    overflow: hidden
+  #works
+    margin-top: -5px
+
 
 header
   ul

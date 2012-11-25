@@ -5,6 +5,5 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_id = 'sidebar_navigation'
     primary.item 'about', I18n.t('navigation.sidebar.about'), page_path('about')
     primary.item 'contact', I18n.t('navigation.sidebar.contact'), new_contact_path
-    primary.item 'phone', '668 860 931'
   end
 end

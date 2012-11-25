@@ -47,7 +47,7 @@ module Thumbnailer
     thumbnail_coordinates['x'].to_i > 0 &&
     thumbnail_coordinates['y'].to_i > 0 &&
     thumbnail_coordinates['h'].to_i > 0 &&
-    thumbnail_coordinates['w'].to_i > 0
+    thumbnail_coordinates['w'].to_i > 330
   end
 
   # A helper to return the thumbnail_coordinates in a friendly format for
@@ -78,6 +78,6 @@ module Thumbnailer
   end
 
   def fancybox_url
-    image.url(:main)
+    image.url(:thumbnail)
   end
 end

@@ -6,4 +6,8 @@ class Video < ActiveRecord::Base
 
   translates :name, :description
   translate_accessors_in :ca, :es, :en
+
+  def youtube_id
+    YoutubeId.new(url).id
+  end
 end

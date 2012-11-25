@@ -14,36 +14,17 @@
       = f.hidden_field :thumbnail_coordinates
       = image_tag(resource.image.url, id: 'image') if resource.image?
 
-      #thumb_container
-        = image_tag resource.image.url, id: 'thumb'
-
+  .clear
   = f.association :category, collection: Category.all
   = f.submit
 
 javascript:
   var jcrop_api;
-  function showPreview(coords)
-  {
-    var image = $('#image');
-    var thumb_container = $('#thumb_container');
-
-    var rx = thumb_container.width() / coords.w;
-    var ry = thumb_container.height() / coords.h;
-
-    $('#thumb').css({
-      width: Math.round(rx * image.width()) + 'px',
-      height: Math.round(ry * image.height()) + 'px',
-      marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-      marginTop: '-' + Math.round(ry * coords.y) + 'px'
-    });
-  };
-
   function update_form(coords) {
     var json = JSON.stringify(coords);
     var thumb_input = $('#illustration_thumbnail_coordinates')
 
     thumb_input[0].value = json;
-    showPreview(coords);
   }
 
 -if resource.thumbnail_coordinates.blank?
@@ -52,7 +33,9 @@ javascript:
       $('#image').Jcrop({
         onChange: update_form,
         onSelect: update_form,
-        aspectRatio: 1
+        boxWidth: 900,
+        boxHeight: 900,
+        minSize: [330,0]
       });
     });
 -else
@@ -61,9 +44,9 @@ javascript:
       $('#image').Jcrop({
         onChange: update_form,
         onSelect: update_form,
-        aspectRatio: 1
-      },function(){
-        this.setSelect([#{select_current_coordinates(resource.thumbnail_coordinates)}]);
-        showPreview(#{resource.thumbnail_coordinates.to_json.html_safe});
+        boxWidth: 900,
+        boxHeight: 900,
+        minSize: [330,0],
+        setSelect: [#{select_current_coordinates(resource.thumbnail_coordinates)}]
       });
     });
