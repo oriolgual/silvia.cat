@@ -32,6 +32,7 @@ gem 'fancybox-rails'
 gem 'friendly_id'
 gem 'simple-navigation'
 gem 'globalize3'
+gem 'kaminari'
 
 group :development do
   gem 'rack-webconsole'
