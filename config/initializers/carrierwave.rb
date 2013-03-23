@@ -9,7 +9,8 @@ CarrierWave.configure do |config|
     }
     config.fog_public     = true
     config.fog_directory  = ENV['FOG_DIRECTORY']
-    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+    config.fog_attributes = {'Cache-Control'=>'max-age=315576000',
+                             'Expires' => 1.year.from_how.httpdate }
   else
     config.storage = :file
     CarrierWave.root = Rails.root.join(Rails.public_path).to_s
