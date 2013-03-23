@@ -1,13 +1,8 @@
 #about
   #slideshow
-    img height='323' src='/images/quisoc/perfilweb_1.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_2.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_3.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_4.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_5.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_6.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_7.jpg' width='228'
-    img height='323' src='/images/quisoc/perfilweb_8.jpg' width='228'
+    -(1..8).to_a.each do |index|
+      =image_tag("quisoc/perfilweb_#{index}.jpg", height: 323, width: 228)
+
   #text
     p Me llamo Silvia Puig Brujas, soy Ilustradora y animadora 2D.
 
