@@ -51,10 +51,9 @@ describe Thumbnailer do
 
     it 'serializes thumbnail_coordinates as a Hash' do
       subject.thumbnail_coordinates = [0, 0, 100, 100, 100, 100]
-      subject.save!
 
       Proc.new {
-        Foo.find(subject.id)
+        subject.save!
       }.must_raise ActiveRecord::SerializationTypeMismatch
     end
   end
@@ -62,14 +61,14 @@ describe Thumbnailer do
   describe 'instance methods' do
     describe 'thumbnail_coordinates=' do
       it 'accepts a JSON string and parses it' do
-        subject.thumbnail_coordinates = "{\"x\":482,\"y\":44,\"x2\":821,\"y2\":383,\"w\":339,\"h\":339}"
+        subject.thumbnail_coordinates = "{\"x\":482,\"y\":44,\"w\":339,\"h\":339}"
         subject.thumbnail_coordinates.must_be_kind_of Hash
       end
     end
 
     describe 'can_be_cropped?' do
       it 'returns true if coordinates are valid' do
-        subject.thumbnail_coordinates = {'x' => '1', 'y' => '1', 'w' => '100', 'h' => '100'}
+        subject.thumbnail_coordinates = {'x' => '1', 'y' => '1', 'w' => '350', 'h' => '100'}
 
         subject.can_be_cropped?.must_equal true
       end

@@ -32,7 +32,7 @@ Given /^I am on the illustration edit page$/ do
 end
 
 When /^I fill in the illustration form to change some data$/ do
-  fill_in 'Nom', with: 'Sketch #1'
+  fill_in 'Nom (català)', with: 'Sketch #1'
   find('input#illustration_thumbnail_coordinates').set('{"x":0,"y":0,"w":10,"h":10}')
   click_button 'Actualitzar Il·lustració'
 end

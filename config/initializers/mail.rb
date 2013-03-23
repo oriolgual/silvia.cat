@@ -6,4 +6,4 @@ ActionMailer::Base.smtp_settings = {
   :password       => ENV['SENDGRID_PASSWORD'],
   :domain         => 'heroku.com'
 }
-ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :smtp if Rails.env.production?

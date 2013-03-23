@@ -21,7 +21,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/spec'
-require 'mocha'
+require 'mocha/setup'
 require 'machinist/active_record'
 require 'database_cleaner'
 DatabaseCleaner.strategy = :transaction

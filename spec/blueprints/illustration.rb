@@ -6,4 +6,5 @@ Illustration.blueprint do
   description { "A nice illustration."}
   image { File.open(rails_root + '/support/files/illustration.jpg') }
   category
+  featured { true }
 end

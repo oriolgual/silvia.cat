@@ -8,39 +8,7 @@ Given /^I am on the homepage$/ do
 end
 
 Then /^I should see the illustrations$/ do
-  page.has_css?('#gallery #works li', count: @illustrations.length).must_equal true
-end
-
-Then /^I should see the expanded view of the newest illustration$/ do
-  # must_see_illustration_data @illustrations.last
-end
-
-When /^I click on the first thumbnail$/ do
-  @current_illustration = @illustrations.first
-  click_link @current_illustration.name
-end
-
-Then /^I should see a bigger picture of the illustration$/ do
-  page.has_xpath?("//img[@alt='#{@current_illustration.name}']").must_equal true
-end
-
-Then /^I should see the illustration data$/ do
-  must_see_illustration_data @current_illustration
-end
-
-Given /^I have clicked on an illustration thumbnail$/ do
-  @current_illustration = @illustrations.first
-  visit illustration_path(@current_illustration)
-end
-
-When /^I click at the illustration bigger picture$/ do
-  within '#work' do
-    click_link @current_illustration.name
-  end
-end
-
-Then /^I should see a high\-res illustration picture$/ do
-  page.has_css?('img#fancybox-img').must_equal true
+  page.has_css?('#works article', count: @illustrations.length).must_equal true
 end
 
 Given /^some illustration are categorized with fanart$/ do

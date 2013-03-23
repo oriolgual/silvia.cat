@@ -6,7 +6,7 @@ end
 
 When /^I fill in the contact form and submit it$/ do
   fill_in 'Nom', with: 'Mr. Boogedy'
-  fill_in 'Correu electrònic', with: 'mr@boogedy.com'
+  fill_in 'Correu electrònic', with: 'oriol@boun.cr'
   fill_in 'Missatge', with: 'I need to clean my public image, would you make a cute design for me?'
   click_button 'Enviar'
 end
