@@ -1,10 +1,11 @@
-= simple_form_for [ :backend, resource ] do |f|
+= simple_form_for [ :backend, resource ], html: {class: 'form-vertical'} do |f|
   = f.input :name_ca, required: true
   = f.input :name_es, required: true
   = f.input :name_en, required: true
-  = f.input :description_ca, as: :text
-  = f.input :description_es, as: :text
-  = f.input :description_en, as: :text
+  = f.input :description_ca, as: :text, input_html: {class: 'input-xxlarge', rows: 5}
+  = f.input :description_es, as: :text, input_html: {class: 'input-xxlarge', rows: 5}
+  = f.input :description_en, as: :text, input_html: {class: 'input-xxlarge', rows: 5}
+  = f.association :category, collection: Category.all
   = f.input :featured, required: true, as: :boolean
 
   #illustration
@@ -15,8 +16,7 @@
       = image_tag(resource.image.url, id: 'image') if resource.image?
 
   .clear
-  = f.association :category, collection: Category.all
-  = f.submit
+  = f.submit class: 'btn'
 
 javascript:
   var jcrop_api;

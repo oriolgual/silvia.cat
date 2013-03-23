@@ -1,6 +1,8 @@
 class Backend::ResourceController < Backend::ApplicationController
   inherit_resources
-  respond_to :html
-  has_scope :page, default: 1
   self.responder = Backend::Responder
+
+  def collection
+    @collection ||= end_of_association_chain.page(params.fetch(:page, 1))
+  end
 end
