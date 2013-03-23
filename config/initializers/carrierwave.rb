@@ -7,6 +7,8 @@ CarrierWave.configure do |config|
       aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
       region:                 ENV['AWS_REGION']
     }
+    config.fog_host       = ENV['FOG_HOST']
+    config.fog_public     = true
     config.fog_directory  = ENV['FOG_DIRECTORY']
     config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
   else
