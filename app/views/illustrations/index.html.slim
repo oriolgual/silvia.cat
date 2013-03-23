@@ -1,3 +1,4 @@
 #works
   -if @illustrations.any?
-    = render @illustrations
+    -cache [I18n.locale, @illustrations] do
+      = render @illustrations

@@ -2,7 +2,7 @@
 #
 class IllustrationsController < ApplicationController
   inherit_resources
-  actions :index, :show
+  actions :index
   belongs_to :category, optional: true
 
   layout :select_layout

@@ -23,6 +23,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'simple-navigation'
 gem "slim"
+gem 'cache_digests'
 
 # Server
 gem 'foreman'
