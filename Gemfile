@@ -20,7 +20,7 @@ gem 'inherited_resources'
 gem 'responders'
 gem "jquery-rails"
 gem "formalize-rails"
-gem 'fog'
+gem 'fog', '1.1.1'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
