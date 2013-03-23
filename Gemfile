@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1'
+gem 'rails', '~> 3.2'
 gem 'pg'
 
 gem "slim"
 
 group :assets do
-  gem 'sass-rails', '~> 3.1'
+  gem 'sass-rails', '~> 3.2'
   gem 'compass', '~> 0.12.alpha'
   gem "uglifier"
   gem 'masonry-rails'

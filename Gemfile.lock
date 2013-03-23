@@ -301,9 +301,9 @@ DEPENDENCIES
   pg
   pry
   rack-webconsole
-  rails (~> 3.1)
+  rails (~> 3.2)
   responders
-  sass-rails (~> 3.1)
+  sass-rails (~> 3.2)
   simple-navigation
   simple_form
   simplecov
