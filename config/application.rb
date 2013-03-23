@@ -57,5 +57,6 @@ module Silvia
     config.assets.enabled = true
     # config.assets.paths << Rails.root.join("app", "assets", "images")
     config.assets.precompile += ['backend.css', 'backend.js']
+    config.assets.initialize_on_precompile = false
   end
 end

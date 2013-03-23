@@ -11,6 +11,8 @@ group :assets do
   gem 'compass-rails'
   gem "uglifier"
   gem 'masonry-rails'
+  gem 'asset_sync'
+  gem 'turbo-sprockets-rails3'
 end
 
 gem 'inherited_resources'
@@ -62,5 +64,7 @@ group :development, :test do
 end
 
 group :production do
+  gem 'dalli'
+  gem 'memcachier'
   gem 'newrelic_rpm'
 end
