@@ -47,7 +47,7 @@ Silvia::Application.configure do
   config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = "//s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}"
+  config.action_controller.asset_host = ENV['FOG_HOST']
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
