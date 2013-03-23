@@ -7,7 +7,8 @@ gem "slim"
 
 group :assets do
   gem 'sass-rails', '~> 3.2'
-  gem 'compass', '~> 0.12.alpha'
+  gem 'compass', github: 'chriseppstein/compass', branch: 'stable'
+  gem 'compass-rails'
   gem "uglifier"
   gem 'masonry-rails'
 end
@@ -20,7 +21,7 @@ gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
-gem 'jcrop-rails'
+gem 'jcrop-rails', github: 'nragaz/jcrop-rails', branch: 'master'
 gem 'high_voltage'
 gem 'foreman'
 gem 'unicorn'

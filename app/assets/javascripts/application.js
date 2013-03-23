@@ -6,10 +6,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".work a").live('click', function(ev) {
-    ev.preventDefault();
-    $(this).fancybox().click();
-  });
+  $(".work a").fancybox();
 
   $('#slideshow').cycle({
     fx: 'fade',

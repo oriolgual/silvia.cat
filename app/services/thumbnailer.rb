@@ -28,7 +28,7 @@ module Thumbnailer
     serialize :thumbnail_coordinates, Hash
 
     # Add a hook to generate the thumbnail after updating
-    after_update :thumbnail!
+    before_update :thumbnail!
   end
 
   # Sets the thumbnail_attributes
@@ -64,7 +64,9 @@ module Thumbnailer
   #
   # TODO: Find a way to just recreate the thumbnail insted of all versions.
   def thumbnail!
-    image.recreate_versions! if thumbnail_coordinates_changed?
+   if thumbnail_coordinates_changed?
+      image.recreate_versions!
+   end
   end
 
   # A helper that returns the thumbnail version url
