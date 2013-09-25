@@ -14,5 +14,8 @@ Silvia::Application.routes.draw do
     resources :videos
   end
 
+  get '/resumee', to: redirect('https://s3-eu-west-1.amazonaws.com/silvia.cat/silvia_brujas_resumee.pdf')
+  get '/curriculum', to: redirect('https://s3-eu-west-1.amazonaws.com/silvia.cat/cv_silvia_brujas.pdf')
+
   root to: 'illustrations#index'
 end
