@@ -1,4 +1,4 @@
-= simple_form_for [ :backend, resource ], html: {class: 'form-vertical'} do |f|
+= simple_form_for resource, url: backend_category_path(resource.id), html: {class: 'form-vertical'} do |f|
   = f.input :name_ca
   = f.input :name_es
   = f.input :name_en

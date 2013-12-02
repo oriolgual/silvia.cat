@@ -14,9 +14,9 @@
               - %w(name active).each do |attr|
                 td= resource.public_send(attr).to_s.truncate(20)
               td
-                = link_to 'Editar', edit_resource_path(resource)
+                = link_to 'Editar', edit_resource_path(resource.id)
                 '
-                = link_to 'Esborrar', resource_path(resource), method: :delete, confirm: "Segur que vols esborrar-ho?"
+                = link_to 'Esborrar', resource_path(resource.id), method: :delete, confirm: "Segur que vols esborrar-ho?"
 
       .actions-bar.wat-cf
         = paginate collection
