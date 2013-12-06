@@ -18,6 +18,10 @@ class Category < ActiveRecord::Base
     where(active: true)
   end
 
+  def self.find_by_slug(slug)
+    where('slug_ca = ? OR slug_es = ? OR slug_en = ?', slug, slug, slug).first
+  end
+
   # Never generate automatically a new slug because it has problems with
   # multiple locales.
   def should_generate_new_friendly_id?
