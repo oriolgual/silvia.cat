@@ -1,6 +1,6 @@
 module WorkHelper
   def work(work)
-    link_to work.image_url, {title: work.name} do
+    link_to work.image_url, {title: work.name, rel: 'fancybox-'.concat(request.path.gsub('/',''))} do
       image_tag(work.fancybox_url, alt: work.name) +
       work_info(work)
     end
