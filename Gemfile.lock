@@ -63,9 +63,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 1.0.0)
-    capybara-webkit (0.14.2)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -278,7 +275,6 @@ DEPENDENCIES
   asset_sync
   cache_digests
   capybara
-  capybara-webkit
   carrierwave
   compass!
   compass-rails

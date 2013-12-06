@@ -47,7 +47,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'capybara-webkit'
   gem 'cucumber-rails'
   gem 'minitest'
   gem 'mocha'
