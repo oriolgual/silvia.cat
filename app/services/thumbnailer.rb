@@ -35,8 +35,32 @@ module Thumbnailer
   #
   # @param value If it's a JSON string it will be parsed as a Hash
   def thumbnail_coordinates=(value)
-    value = ActiveSupport::JSON.decode(value) if value.is_a?(String)
+    if value.is_a?(String)
+      value, bounds = value.split('#')
+      ratio = thumbnail_ratio(bounds)
+      value = ActiveSupport::JSON.decode(value)
+      value['ratio'] = ratio
+    end
+
     super(value)
+  end
+
+  def thumbnail_ratio(bounds)
+    width, height = bounds.split(',')
+
+    original_width / width.to_f
+  end
+
+  def original_dimensions
+    @original_dimensions ||= `identify -format "%wx%h" #{self.image.file.path}`.split(/x/)
+  end
+
+  def original_width
+    original_dimensions.first.to_f
+  end
+
+  def original_height
+    original_dimensions.last.to_f
   end
 
   # Returns whether the image cn be cropped or not
@@ -47,16 +71,17 @@ module Thumbnailer
     thumbnail_coordinates['x'].to_i > 0 &&
     thumbnail_coordinates['y'].to_i > 0 &&
     thumbnail_coordinates['h'].to_i > 0 &&
-    thumbnail_coordinates['w'].to_i > 330
+    thumbnail_coordinates['w'].to_i > 0
   end
 
   # A helper to return the thumbnail_coordinates in a friendly format for
   # ImageMagick.
   def magick_thumbnail_coordinates
-    x = thumbnail_coordinates['x'].to_i
-    y = thumbnail_coordinates['y'].to_i
-    height = thumbnail_coordinates['h'].to_i
-    width = thumbnail_coordinates['w'].to_i
+    ratio = thumbnail_coordinates['ratio']
+    x = thumbnail_coordinates['x'].to_i * ratio
+    y = thumbnail_coordinates['y'].to_i * ratio
+    height = thumbnail_coordinates['h'].to_i * ratio
+    width = thumbnail_coordinates['w'].to_i * ratio
     "#{width}x#{height}+#{x}+#{y}"
   end
 

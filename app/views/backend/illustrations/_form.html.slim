@@ -23,8 +23,12 @@ javascript:
   function update_form(coords) {
     var json = JSON.stringify(coords);
     var thumb_input = $('#illustration_thumbnail_coordinates')
+    var bounds = '';
+    if (jcrop_api) {
+      bounds = jcrop_api.getBounds().toString();
+    }
 
-    thumb_input[0].value = json;
+    thumb_input[0].value = json + "#" + bounds;
   }
 
 -if resource.thumbnail_coordinates.blank?
@@ -35,7 +39,8 @@ javascript:
         onSelect: update_form,
         boxWidth: 900,
         boxHeight: 900,
-        minSize: [330,0]
+      }, function(){
+        jcrop_api = this;
       });
     });
 -else
@@ -46,7 +51,8 @@ javascript:
         onSelect: update_form,
         boxWidth: 900,
         boxHeight: 900,
-        minSize: [330,0],
         setSelect: [#{select_current_coordinates(resource.thumbnail_coordinates)}]
+      }, function(){
+        jcrop_api = this;
       });
     });
