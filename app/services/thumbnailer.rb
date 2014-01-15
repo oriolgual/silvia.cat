@@ -51,16 +51,17 @@ module Thumbnailer
     original_width / width.to_f
   end
 
-  def original_dimensions
-    @original_dimensions ||= `identify -format "%wx%h" #{self.image.file.path}`.split(/x/)
-  end
-
   def original_width
-    original_dimensions.first.to_f
+    mini_magick_image[:width]
   end
 
   def original_height
-    original_dimensions.last.to_f
+    mini_magick_image[:height]
+  end
+
+  def mini_magick_image
+    self.image.cache_stored_file! if !self.image.cached?
+    @mini_magick_image ||= ::MiniMagick::Image.open(self.image.current_path)
   end
 
   # Returns whether the image cn be cropped or not
