@@ -35,6 +35,8 @@ module Thumbnailer
   #
   # @param value If it's a JSON string it will be parsed as a Hash
   def thumbnail_coordinates=(value)
+    self.thumbnail_coordinates_will_change!
+
     if value.is_a?(String)
       value, bounds = value.split('#')
       ratio = thumbnail_ratio(bounds)
