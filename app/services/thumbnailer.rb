@@ -27,7 +27,6 @@ module Thumbnailer
     #
     serialize :thumbnail_coordinates, Hash
 
-    # Add a hook to generate the thumbnail after updating
     before_update :thumbnail!
   end
 
@@ -35,35 +34,18 @@ module Thumbnailer
   #
   # @param value If it's a JSON string it will be parsed as a Hash
   def thumbnail_coordinates=(value)
-    self.thumbnail_coordinates_will_change!
+    thumbnail_coordinates_will_change!
+
+    previous_bounds = thumbnail_coordinates['bounds']
 
     if value.is_a?(String)
       value, bounds = value.split('#')
-      ratio = thumbnail_ratio(bounds)
       value = ActiveSupport::JSON.decode(value)
-      value['ratio'] = ratio
+
+      value['bounds'] = bounds || previous_bounds
     end
 
     super(value)
-  end
-
-  def thumbnail_ratio(bounds)
-    width, height = bounds.split(',')
-
-    original_width / width.to_f
-  end
-
-  def original_width
-    mini_magick_image[:width]
-  end
-
-  def original_height
-    mini_magick_image[:height]
-  end
-
-  def mini_magick_image
-    self.image.cache_stored_file! if !self.image.cached?
-    @mini_magick_image ||= ::MiniMagick::Image.open(self.image.current_path)
   end
 
   # Returns whether the image cn be cropped or not
@@ -75,26 +57,6 @@ module Thumbnailer
     thumbnail_coordinates['y'].to_i > 0 &&
     thumbnail_coordinates['h'].to_i > 0 &&
     thumbnail_coordinates['w'].to_i > 0
-  end
-
-  # A helper to return the thumbnail_coordinates in a friendly format for
-  # ImageMagick.
-  def magick_thumbnail_coordinates
-    ratio = thumbnail_coordinates['ratio']
-    x = thumbnail_coordinates['x'].to_i * ratio
-    y = thumbnail_coordinates['y'].to_i * ratio
-    height = thumbnail_coordinates['h'].to_i * ratio
-    width = thumbnail_coordinates['w'].to_i * ratio
-    "#{width}x#{height}+#{x}+#{y}"
-  end
-
-  # Tell CarrierWave to recreate the image versions.
-  #
-  # TODO: Find a way to just recreate the thumbnail insted of all versions.
-  def thumbnail!
-   if thumbnail_coordinates_changed?
-      image.recreate_versions!
-   end
   end
 
   # A helper that returns the thumbnail version url
@@ -109,5 +71,10 @@ module Thumbnailer
 
   def fancybox_url
     image.url(:thumbnail)
+  end
+
+  def thumbnail!
+    return unless thumbnail_coordinates_changed?
+    image.recreate_versions!(:thumbnail)
   end
 end

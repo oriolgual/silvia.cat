@@ -22,8 +22,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   def crop
     return unless model.can_be_cropped?
     manipulate! do |image|
+      crop_ratio = ratio(image[:width], model.thumbnail_coordinates.fetch('bounds'))
+      coordinates = magick_thumbnail_coordinates(model.thumbnail_coordinates, crop_ratio)
+
       image.combine_options do |command|
-        command.crop(model.magick_thumbnail_coordinates)
+        command.crop(coordinates)
       end
       image
     end
@@ -36,4 +39,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg png)
   end
+
+  def ratio(original_width, bounds)
+    width, height = bounds.split(',')
+
+    original_width / width.to_f
+  end
+
+  # A helper to return the thumbnail_coordinates in a friendly format for
+  # ImageMagick.
+  def magick_thumbnail_coordinates(coordinates, ratio = 1)
+    ratio = 1 if ratio.to_i == 0
+
+    x = coordinates['x'].to_i * ratio
+    y = coordinates['y'].to_i * ratio
+    height = coordinates['h'].to_i * ratio
+    width = coordinates['w'].to_i * ratio
+    "#{width}x#{height}+#{x}+#{y}"
+  end
+
 end
