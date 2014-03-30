@@ -1,7 +1,12 @@
 doctype 5
 html
   head
-    title Silvia Brujas
+    -if @highlighted_illustration
+      title=@highlighted_illustration.name.dup.concat(' - ').concat(t('title'))
+    -elsif category
+      title=category.name.dup.concat(' - ').concat(t('title'))
+    -else
+      title=t('title')
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
@@ -20,9 +25,10 @@ html
       meta name="og:image" content=@highlighted_illustration.image_url
     -elsif illustrations
       meta name="twitter:card" content="gallery"
-      meta name="twitter:title" content="Silvia Brujas"
-      meta name="og:title" content="Silvia Brujas"
-      meta name="twitter:description" content=category.name
+      meta name="twitter:title" content=t('title')
+      meta name="og:title" content=t('title')
+      -if category
+        meta name="twitter:description" content=category.name
       -illustrations.each_with_index do |illustration, index|
         meta name="twitter:image#{index}" content=illustration.image_url
         meta name="og:image" content=illustration.image_url
