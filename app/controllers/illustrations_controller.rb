@@ -1,11 +1,6 @@
 # This controller is used as a REST interface for Illustrations
 #
 class IllustrationsController < ApplicationController
-  helper_method :illustrations
-
-  def index
-  end
-
   def show
     @highlighted_illustration = Illustration.find_by_slug(params[:slug])
     redirect_to root_path unless @highlighted_illustration
