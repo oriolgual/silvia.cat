@@ -13,6 +13,7 @@ function titleFormat(title_text, selectedArray, selectedIndex, currentOpts) {
   title += '<div class="share">';
   title += '<a class="twitter-share-button" data-count="none" data-text="' + social_text + '" data-url="' + href + '" data-related="silviabrujas" data-via="silviabrujas" href="https://twitter.com/share">Tweet</a>';
   title += '<div class="google-plus"><div class="g-plusone" data-annotation="none" data-size="tall" data-href="'+href+'"></div></div>';
+  title += '<div class="fb-share-button" data-href="' + href +'" data-type="button"></div>'
   title += '<iframe src="//www.facebook.com/plugins/like.php?href=' + href + '&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:23px;" allowTransparency="true"></iframe>';
   title += '</div>';
 
@@ -32,6 +33,7 @@ $(document).ready(function() {
     onComplete: function(selectedArray, selectedIndex, selectedOptions){
       if (twttr != undefined) twttr.widgets.load();
       if (gapi != undefined) gapi.plusone.go();
+      if (FB != undefined) FB.XFBML.parse();
     }
   });
 
