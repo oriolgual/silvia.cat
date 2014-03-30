@@ -15,6 +15,8 @@ Silvia::Application.routes.draw do
   get '/resume', to: redirect('https://s3-eu-west-1.amazonaws.com/silvia.cat/silvia_brujas_resumee.pdf')
   get '/curriculum', to: redirect('https://s3-eu-west-1.amazonaws.com/silvia.cat/cv_silvia_brujas.pdf')
 
+  get 'pages/:id', to: 'high_voltage/pages#show', as: 'page'
+
   get '/illustrations/category/:category_id', to: redirect('/%{category_id}')
   get '/:category_id', to: 'illustrations#index'
   get '/:category_id/:slug', to: 'illustrations#show', as: 'illustration'
