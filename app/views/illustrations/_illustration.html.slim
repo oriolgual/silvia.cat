@@ -1,6 +1,6 @@
 -cache [I18n.locale, illustration] do
   article.work
-    =link_to illustration_path(illustration.category, illustration), {title: illustration.name, fancybox_href: illustration.image_url, rel: 'fancybox-'.concat(request.path.gsub('/','')), id: dom_id(illustration)} do
+    =link_to illustration_url(illustration.category, illustration), {title: illustration.name, fancybox_href: illustration.image_url, rel: 'fancybox-'.concat(request.path.gsub('/','')), id: dom_id(illustration)} do
       =image_tag(illustration.fancybox_url, alt: illustration.name)
       span.info
         span.title=illustration.name
