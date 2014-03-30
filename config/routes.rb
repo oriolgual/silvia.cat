@@ -17,6 +17,7 @@ Silvia::Application.routes.draw do
 
   get '/illustrations/category/:category_id', to: redirect('/%{category_id}')
   get '/:category_id', to: 'illustrations#index'
+  get '/:category_id/:slug', to: 'illustrations#show', as: 'illustration'
 
   root to: 'illustrations#index'
 end

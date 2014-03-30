@@ -15,7 +15,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # App
-gem 'inherited_resources'
 gem 'high_voltage'
 gem 'friendly_id'
 gem 'globalize3'
@@ -39,10 +38,6 @@ group :assets do
   gem "uglifier"
   gem 'asset_sync'
   gem 'turbo-sprockets-rails3'
-end
-
-group :development do
-  gem 'rack-webconsole'
 end
 
 group :test do

@@ -6,12 +6,21 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".work a").fancybox();
-
-  $('#slideshow').cycle({
-    fx: 'fade',
-    timeout: 1000
+  $(".work a").fancybox({
+    type: 'image',
+    onStart: function(selectedArray, selectedIndex, selectedOptions){
+      return {
+        href: selectedArray[selectedIndex].attributes['fancybox_href'].value
+      }
+    }
   });
+
+  if ($('#slideshow').length) {
+    $('#slideshow').cycle({
+      fx: 'fade',
+      timeout: 1000
+    });
+  }
 
   var $container = $('#works');
   $container.imagesLoaded(function(){

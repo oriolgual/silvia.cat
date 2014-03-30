@@ -9,18 +9,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   private
-  def select_layout
-    if pjax_request?
-      false
-    else
-      'application'
-    end
-  end
-
-  def pjax_request?
-    request.headers['X-PJAX']
-  end
-
   def set_locale
     session[:locale] = LocaleDetector.new(params, session, request.env).detect
     I18n.locale = session[:locale]

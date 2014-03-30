@@ -13,3 +13,9 @@ html
 
     section#content
       = yield
+
+    -if @highlighted_illustration
+      javascript:
+        jQuery(document).ready(function() {
+              $("##{dom_id(@highlighted_illustration)}").trigger('click');
+        });
