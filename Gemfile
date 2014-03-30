@@ -8,6 +8,7 @@ gem 'pg'
 gem 'jcrop-rails', github: 'nragaz/jcrop-rails', branch: 'master'
 gem 'kaminari'
 gem 'responders'
+gem 'inherited_resources'
 
 # Images
 gem 'fog'
