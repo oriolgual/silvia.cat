@@ -2,7 +2,7 @@ require 'application_responder'
 require 'locale_detector'
 
 class ApplicationController < ActionController::Base
-  helper_method :illustrations
+  helper_method :illustrations, :category
 
   self.responder = ApplicationResponder
   respond_to :html
@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def illustrations
+  end
+
+  def category
   end
 
   private
