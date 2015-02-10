@@ -5,5 +5,7 @@ h1
 nav
   ==render_navigation
   ==render_navigation(context: :sidebar)
-  ==render_navigation(context: :social)
+  iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsilviabrujas&amp;width&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=95" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:95px;" allowTransparency="true"
+
+  iframe src='//platform.twitter.com/widgets/follow_button.html?screen_name=silviabrujas&lang=#{I18n.locale.to_s}&show_count=false' style="border: none; overflow:hiddem; width: 225px; height: 20px;" allowtransparency="true" frameborder="0" scrolling="no"
   ==render_navigation(context: :language)
