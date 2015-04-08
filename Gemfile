@@ -28,7 +28,7 @@ gem 'cache_digests'
 # Server
 gem 'foreman'
 gem 'unicorn'
-gem 'rollbar', '~> 1.2.7'
+gem 'rollbar', '~> 1.4.4'
 
 group :assets do
   gem 'sass-rails', '~> 3.2'
